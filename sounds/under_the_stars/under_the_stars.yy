@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"under_the_stars",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":188.22095,
+  "exportDir":"",
+  "name":"under_the_stars",
+  "parent":{
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"under_the_stars.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,2 @@
+golpeada = false;
+item = noone;

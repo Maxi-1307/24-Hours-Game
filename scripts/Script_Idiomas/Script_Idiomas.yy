@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Script_Idiomas",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Script_Idiomas",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/TextBox/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

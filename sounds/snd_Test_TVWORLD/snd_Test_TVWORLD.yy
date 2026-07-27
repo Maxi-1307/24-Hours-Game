@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Test_TVWORLD",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":129.10347,
+  "exportDir":"",
+  "name":"snd_Test_TVWORLD",
+  "parent":{
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Test_TVWORLD.ogg",
+  "volume":1.0,
+}

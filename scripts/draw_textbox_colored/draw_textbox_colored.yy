@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_textbox_colored",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_textbox_colored",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/TextBox/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

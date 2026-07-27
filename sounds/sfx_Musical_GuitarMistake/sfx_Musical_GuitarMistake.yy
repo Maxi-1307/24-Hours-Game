@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_Musical_GuitarMistake",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.8573469,
+  "exportDir":"",
+  "name":"sfx_Musical_GuitarMistake",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/sonidos/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_Musical_GuitarMistake.wav",
+  "volume":1.0,
+}

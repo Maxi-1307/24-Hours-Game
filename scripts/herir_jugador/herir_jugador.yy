@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"herir_jugador",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"herir_jugador",
+  "parent":{
+    "name":"stuff",
+    "path":"folders/rooms/street/Buildings/Arcade/Platformer/stuff.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

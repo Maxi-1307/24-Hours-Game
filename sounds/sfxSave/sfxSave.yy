@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfxSave",
+  "audioGroupId":{
+    "name":"audiogroupVolumeSFX",
+    "path":"audiogroups/audiogroupVolumeSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.1875057,
+  "exportDir":"",
+  "name":"sfxSave",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/sonidos/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfxSave.ogg",
+  "volume":1.0,
+}

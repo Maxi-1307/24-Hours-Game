@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"PhoneContacts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"PhoneContacts",
+  "parent":{
+    "name":"Inventory",
+    "path":"folders/Inventory.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_knock_door",
+  "audioGroupId":{
+    "name":"audiogroupVolumeSFX",
+    "path":"audiogroups/audiogroupVolumeSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":3.3708618,
+  "exportDir":"",
+  "name":"sfx_knock_door",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/sonidos/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_knock_door.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Castle_Funk",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":176.64,
+  "exportDir":"",
+  "name":"snd_Castle_Funk",
+  "parent":{
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Castle_Funk.ogg",
+  "volume":1.0,
+}

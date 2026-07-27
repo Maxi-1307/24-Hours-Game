@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndHome",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":123.0,
+  "exportDir":"",
+  "name":"sndHome",
+  "parent":{
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndHome.mp3",
+  "volume":1.0,
+}

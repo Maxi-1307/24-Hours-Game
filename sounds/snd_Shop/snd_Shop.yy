@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Shop",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":39.587643,
+  "exportDir":"",
+  "name":"snd_Shop",
+  "parent":{
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Shop.ogg",
+  "volume":1.0,
+}

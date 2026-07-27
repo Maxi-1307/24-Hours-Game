@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfxImpact",
+  "audioGroupId":{
+    "name":"audiogroupVolumeSFX",
+    "path":"audiogroups/audiogroupVolumeSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.61678004,
+  "exportDir":"",
+  "name":"sfxImpact",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/sonidos/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfxImpact.wav",
+  "volume":1.0,
+}

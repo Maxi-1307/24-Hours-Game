@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfx_rain",
+  "audioGroupId":{
+    "name":"audiogroupVolumeSFX",
+    "path":"audiogroups/audiogroupVolumeSFX",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":30.83653,
+  "exportDir":"",
+  "name":"sfx_rain",
+  "parent":{
+    "name":"Sfx",
+    "path":"folders/sonidos/Sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfx_rain.ogg",
+  "volume":0.58,
+}

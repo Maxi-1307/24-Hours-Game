@@ -1,0 +1,9 @@
+posicion_ancla_y = y;
+
+
+tiempo_flotando = 0;
+
+image_xscale = 1;
+image_yscale = 1;
+image_speed = 0;
+image_index = irandom(2);

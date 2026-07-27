@@ -1,0 +1,21 @@
+{
+  "$GMRoomUI":"",
+  "%Name":"RoomUI",
+  "children":[],
+  "locked":true,
+  "name":"RoomUI",
+  "parent":{
+    "name":"24_hours",
+    "path":"24_hours.yyp",
+  },
+  "resourceType":"GMRoomUI",
+  "resourceVersion":"2.0",
+  "viewspaceChildren":[
+    {"$GMRUILayer":"v1","%Name":"Dialogue","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"Dialogue","nodeColour":4282970817,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+    {"$GMRUILayer":"v1","%Name":"Inventory","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"Inventory","nodeColour":4286597362,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+    {"$GMRUILayer":"v1","%Name":"Weather","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"Weather","nodeColour":4288366834,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+    {"$GMRUILayer":"v1","%Name":"Atmosphere","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"Atmosphere","nodeColour":4294102088,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+    {"$GMRUILayer":"v1","%Name":"Time","alignItems":2,"children":[],"flexDirection":0,"gridX":32,"gridY":32,"justifyContent":1,"name":"Time","nodeColour":4282970729,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+  ],
+  "visible":true,
+}

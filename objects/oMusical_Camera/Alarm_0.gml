@@ -1,0 +1,1 @@
+transicion_fase = "abriendo";

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scrMusical_Songs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrMusical_Songs",
+  "parent":{
+    "name":"stuff",
+    "path":"folders/rooms/street/Buildings/Arcade/Musical/stuff.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

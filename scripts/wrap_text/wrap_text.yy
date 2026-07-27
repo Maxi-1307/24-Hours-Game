@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"wrap_text",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"wrap_text",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/TextBox/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

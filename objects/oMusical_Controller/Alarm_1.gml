@@ -1,0 +1,1 @@
+audio_stream = audio_play_sound(global.Musica_Seleccionada, 10, false);

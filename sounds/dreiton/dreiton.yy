@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"dreiton",
+  "audioGroupId":{
+    "name":"audiogroupVolume",
+    "path":"audiogroups/audiogroupVolume",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":142.15866,
+  "exportDir":"",
+  "name":"dreiton",
+  "parent":{
+    "name":"24_hours",
+    "path":"24_hours.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"dreiton.ogg",
+  "volume":1.0,
+}
