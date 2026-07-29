@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"dreiton",
   "parent":{
-    "name":"24_hours",
-    "path":"24_hours.yyp",
+    "name":"Music",
+    "path":"folders/sonidos/Music.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

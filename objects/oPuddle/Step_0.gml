@@ -28,7 +28,7 @@ if (!instance_exists(oTextBox) && !instance_exists(oInventory) && alpha_dinamico
         var _tb = instance_create_layer(0, 0, "Dialogue", oTextBox);
         with(_tb) {
             var _etiqueta_al_azar = choose("puddle_phrase_1", "puddle_phrase_2", "puddle_phrase_3", "puddle_phrase_4");
-            text = _T(_etiqueta_al_azar);
+            text[0] = _T(_etiqueta_al_azar);
         
             for(var i = 0; i < 6; i++){
                 speaker_sprite[i] = noone;

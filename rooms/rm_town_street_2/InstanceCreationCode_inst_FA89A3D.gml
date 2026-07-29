@@ -84,4 +84,8 @@ function Update_Dialogos(){
         txtb_color[i] = c_white;
     }
 	txtb_color[7] = c_purple;
+	speaker_sprite[2] = sprPlayer_face_normal;
+	speaker_sprite[4] = sprPlayer_face_normal;
+	speaker_sprite[6] = sprPlayer_face_shocked;
+	
 }
