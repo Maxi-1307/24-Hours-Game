@@ -31,7 +31,7 @@ else if (dado >= 15 && dado < 30) {
 else {
     state = 2; 
     
-    var tipo_turno_normal = current_turn; 
+    var tipo_turno_normal = global.current_turn; 
     
     switch(tipo_turno_normal) {
         case 0:
