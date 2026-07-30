@@ -4,6 +4,13 @@ if(!instance_exists(oInventory)){
     var _layer_tiles, _layer_objs, _es_turno_chica, _cleaner;
     var _timer_limpieza, _limpio_salio, _llego_a_caja;
     var _who_should_welcome, _index, _who_speaks_again;
+	
+	//Cambio de Turnos//
+	if (global.game_minutes >= hour) {
+	    index = (in + 1) mod array_length(global.TURNS);
+	    global.current_turn = global.TURNS[in];
+	    hour += 792;
+	}
 
 	//systema de cobro//
     if(state == 2 && place_meeting(x,y,oPlayer) && !instance_exists(oTextBox) && keyboard_check_pressed(global.ConfirmKey)){

@@ -3,6 +3,10 @@ var layer_objs = layer_get_id("Mopping_objects");
 if (layer_exists(layer_objs)) {
     instance_deactivate_layer(layer_objs);
 }
+//Turnos
+in = 0;
+global.current_turn = global.TURNS[in];
+hour = 792;
 
 
 
@@ -27,7 +31,7 @@ else if (dado >= 15 && dado < 30) {
 else {
     state = 2; 
     
-    var tipo_turno_normal = choose(0, 1, 2); 
+    var tipo_turno_normal = current_turn; 
     
     switch(tipo_turno_normal) {
         case 0:

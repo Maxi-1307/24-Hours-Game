@@ -27,6 +27,7 @@ function New_Game(){
 	global.DuckStory = 0;
     
     global.WEATHER = [];
+	global.TURNS = []
     var climas = ["normal", "soleado", "nublado", "tormentoso", "lluvia", "nevada", "vientoso"];
     
     var clima_actual = choose("normal", "soleado", "nublado");

@@ -25,18 +25,21 @@ if (option_selection == 0) {
     draw_text_transformed(275 + menu_x_offset, 340 + base_y, _T("btn_quit"), 1.5, 1.5, 0); 
 }
 
-if (menu_state == 2    || menu_state == 4) {
-
+if (menu_state == 2 || menu_state == 4) {
+	if (global.Language == 0) {add = 15;}
+	else
+	if (global.Language == 1) {add = 0;}
+	
     draw_set_color(c_white);
     draw_text_transformed(40 + settings_x_offset, 30, _T("title_settings"), 2, 2, 0); 
 
     draw_set_color(option_color(0,settings_index));
     draw_text(60 + settings_x_offset, 100, _T("lbl_volume")); 
-    draw_bar(300, 113, global.Master_Volume, 100, 10);
+    draw_bar(300 + add, 113, global.Master_Volume, 100, 10);
 
     draw_set_color(option_color(1,settings_index));
     draw_text(60 + settings_x_offset, 140, _T("lbl_sfx")); 
-    draw_bar(235, 153, global.SFX_Volume, 100, 10);
+    draw_bar(235 + add, 153, global.SFX_Volume, 100, 10);
 	
 	draw_set_color(option_color(2,settings_index));
 	var vfx_status = (global.SimplifyVFX == 1) ? "ON" : "OFF";

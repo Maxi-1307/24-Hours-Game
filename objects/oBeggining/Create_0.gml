@@ -19,5 +19,5 @@ t_countdown = time_countdown;
 t_sound_only = time_sound_only;
 
 
-if (!file_exists("save_data.json")) {global.WEATHER = []}
+if (!file_exists("save_data.json")) {global.WEATHER = []; global.TURNS = [];}
 index = 0

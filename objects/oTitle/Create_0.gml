@@ -46,3 +46,5 @@ function draw_bar(x, y, value, max_value, bars) {
 listening_key = false;
 block_input   = false;
 controls_index = 0;
+
+add = 0;

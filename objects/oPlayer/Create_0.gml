@@ -27,4 +27,3 @@ state = PLAYER_STATE.NORMAL;
 
 waypoint_list = [];
 waypoint_index = 0;
-

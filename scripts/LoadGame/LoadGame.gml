@@ -24,6 +24,7 @@ function LoadGame(){
         global.Is_Indoors = _data.is_indoors;
         global.Platformer_Final_Score = _data.platformer_final_score;
 		global.StoreNumberStory = _data.store_number_story
+		global.TURNS = _data.storeturns;
 		global.DuckStory = _data.duck_story;
         
         if (variable_struct_exists(_data, "musical_highscore_saved")) {

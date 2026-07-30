@@ -1,3 +1,4 @@
+
 if (intro_state == 1) {
     if (seconds == 0 && minutes == 0 && hours > 0) {
         hours -= 1;
@@ -30,6 +31,7 @@ if (intro_state == 3) {
 
 if (intro_state == 4) {
     fade_alpha -= 0.02;
+    fade_alpha -= 0.02;
     if (fade_alpha <= 0) {
         fade_alpha = 0;
         alarm[5] = game_get_speed(gamespeed_fps) * 3; 
@@ -47,5 +49,14 @@ while (array_length(global.WEATHER) < 12){
         "lluvia",
         "nevada",
         "vientoso"
+    ));
+} 
+
+while (array_length(global.TURNS) < 4){
+
+    array_push(global.TURNS, choose(
+        0,
+        1,
+		2
     ));
 } 

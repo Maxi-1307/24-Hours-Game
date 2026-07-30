@@ -24,6 +24,7 @@ function SaveGame(){
         platformer_final_score : global.Platformer_Final_Score,
         musical_highscore_saved: global.Musical_HighScore_SAVED,
         weather: global.WEATHER,
+		storeturns: global.TURNS,
 		
 		store_number_story: global.StoreNumberStory,
 		duck_story: global.DuckStory
