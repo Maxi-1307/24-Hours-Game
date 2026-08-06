@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Faces",
-    "path":"folders/TextBox/Faces.yy",
+    "name":"Player",
+    "path":"folders/TextBox/Faces/Player.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

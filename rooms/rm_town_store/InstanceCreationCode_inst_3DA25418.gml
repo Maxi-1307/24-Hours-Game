@@ -10,5 +10,4 @@ function Dialogos(){
         txtb_snd[i] = sfx_text;
         speaker_sprite[i] = noone;
     }
-	speaker_sprite[0] = sprFace;
 }

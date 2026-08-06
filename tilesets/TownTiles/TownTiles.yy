@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"TownTiles",
-  "out_columns":50,
+  "out_columns":100,
   "out_tilehborder":0,
   "out_tilevborder":0,
   "parent":{
@@ -39,5 +39,5 @@
   "tileWidth":20,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":2500,
+  "tile_count":10000,
 }

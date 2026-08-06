@@ -43,14 +43,16 @@ if (!setup) {
 // Color del cuadro
 var box_color = c_white;
 if (array_length(txtb_color) > page) box_color = txtb_color[page];
-
+if(choosing){
+	box_color = c_white;
+}
 var spr_w = sprite_get_width(txtb_sprite);
 var spr_h = sprite_get_height(txtb_sprite);
 draw_sprite_ext(txtb_sprite, 0,box_draw_x, box_draw_y,(textbox_width / spr_w) * cam_scale_x,(textbox_height / spr_h) * cam_scale_y,0, box_color, 1);
 
 // Speaker
 var speaker_offset = 0;
-if (speaker_sprite[page] != noone) {
+if (speaker_sprite[page] != noone && !choosing) {
     speaker_offset = 40;
     var spr = speaker_sprite[page];
     var sw = sprite_get_width(spr);
@@ -60,8 +62,21 @@ if (speaker_sprite[page] != noone) {
     var base_scale = target_size / max(sw, sh);
     var final_scale = base_scale * cam_scale_x;
     
-    draw_sprite_ext(spr, 0, box_draw_x + portrait_x_offset[page] * cam_scale_x, box_draw_y, final_scale, final_scale, 0, c_white, 1);
+    // ANIMA SOLO CUANDO ESTÁ TYPEANDOSE:
+    // Comparamos los caracteres dibujados actuales con el largo total del texto
+    if (draw_char < text_length[page]) {
+        // Avanza el frame sumando la velocidad real configurada en el sprite por cada paso (delta_time independiente)
+        var spr_spd = sprite_get_speed(spr) / game_get_speed(gamespeed_fps);
+        speaker_img += spr_spd; 
+    } else {
+        // Cuando termina de escribir, vuelve al primer frame (boca cerrada)
+        speaker_img = 0; 
+    }
+    
+    // Dibujamos usando nuestra variable "speaker_img"
+    draw_sprite_ext(spr, speaker_img, box_draw_x + portrait_x_offset[page] * cam_scale_x, box_draw_y, final_scale, final_scale, 0, c_white, 1);
 }
+
 
 // Texto
 var data = parsed[page];

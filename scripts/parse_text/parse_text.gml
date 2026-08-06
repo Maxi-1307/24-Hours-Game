@@ -39,7 +39,7 @@ function parse_text(_text)
                 case "yellow": current_color = c_yellow; break;
                 case "red":    current_color = c_red; break;
                 case "green":  current_color = c_lime; break;
-                case "blue":   current_color = c_aqua; break;
+                case "blue":   current_color = c_blue; break;
                 case "cyan":   current_color = c_aqua; break;
                 case "purple": current_color = make_color_rgb(160, 0, 255); break;
                 case "pink":   current_color = make_color_rgb(255, 100, 180); break;

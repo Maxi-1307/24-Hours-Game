@@ -20,6 +20,8 @@ page_number = 0;
 draw_char = 0;
 old_draw_char = 0;
 
+speaker_img = 0;
+
 text[0] = "text";
 
 txtb_color = [];

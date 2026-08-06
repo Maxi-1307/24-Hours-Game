@@ -1,12 +1,11 @@
 event_inherited();
-
-if (variable_global_exists("Is_Indoors") && !global.Is_Indoors && image_index== 1) {
+if (variable_global_exists("Is_Indoors") && !global.Is_Indoors) {
     if (oTimeAtmosphere.current_alpha > 0) {
         
         gpu_set_blendmode(bm_add);
         
         var alto_foco = 50;  
-        var largo_haz = 60;
+        var largo_haz  = 60;
         var ancho_haz_suelo = 28;  
         var alto_ovalo = 7;   
         

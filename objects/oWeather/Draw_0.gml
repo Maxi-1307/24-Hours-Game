@@ -3,11 +3,11 @@ var _cam_y = camera_get_view_y(view_camera[0]);
 var _cam_w = camera_get_view_width(view_camera[0]);
 var _cam_h = camera_get_view_height(view_camera[0]);
 
-//debug
+/*/debug
 draw_text_ext_transformed(_cam_x, _cam_y, string(global.WEATHER),5,100,0.5,0.5,0);
 draw_text_transformed(_cam_x, _cam_y + string_height("g"), string(global.CURRENT_WEATHER),0.5,0.5,0);
 draw_text_transformed(_cam_x, _cam_y + string_height("g") * 2, string(global.game_minutes),0.5,0.5,0);
-
+*/
 if(!global.Is_Indoors){
 	if(global.CURRENT_WEATHER == "lluvia" || global.CURRENT_WEATHER == "tormentoso"){
 	        draw_set_alpha(0.2);

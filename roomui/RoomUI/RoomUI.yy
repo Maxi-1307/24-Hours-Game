@@ -1,8 +1,10 @@
 {
   "$GMRoomUI":"",
   "%Name":"RoomUI",
-  "children":[],
-  "locked":true,
+  "children":[
+    {"$GMRUILayer":"v1","%Name":"Puddles","alignItems":2,"children":[],"flexDirection":0,"gridX":20,"gridY":20,"justifyContent":1,"name":"Puddles","nodeColour":4285854280,"resourceType":"GMRUILayer","resourceVersion":"2.0",},
+  ],
+  "locked":false,
   "name":"RoomUI",
   "parent":{
     "name":"24_hours",

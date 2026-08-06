@@ -47,16 +47,20 @@ if(!instance_exists(oInventory)){
                         if(instance_exists(oStore_EmployeeGirl) && !instance_exists(oShop_EmployeeBoy)){
                             if(array_length(oShop_Basket.items) > 0){
                                 text[0] = _T("shop_escape_girl_with_items");
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
                             }else{
                                 text[0] = _T("shop_escape_girl_without_items");
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
                             }
                             txtb_color[0] = #BB7547;
                         }
                         if(instance_exists(oShop_EmployeeBoy) && !instance_exists(oStore_EmployeeGirl)){
                             if(array_length(oShop_Basket.items) > 0){
                                 text[0] = _T("shop_escape_boy_with_items");
+								speaker_sprite[0] = sprEmployeeBoy_face_angry;
                             }else{
                                 text[0] = _T("shop_escape_boy_without_items");
+								speaker_sprite[0] = sprEmployeeBoy_face_angry;
                             }
                             txtb_color[0] = #71413B;
                         }
@@ -66,6 +70,8 @@ if(!instance_exists(oInventory)){
                                 text[1] = _T("shop_escape_both_with_items_2");
                                 txtb_color[0] = #71413B;
                                 txtb_color[1] = #BB7547;
+								speaker_sprite[0] = sprEmployeeBoy_face_angry;
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
                             }else{
                                 text[0] = _T("shop_escape_both_without_items_1");
                                 text[1] = _T("shop_escape_both_without_items_2");
@@ -73,10 +79,12 @@ if(!instance_exists(oInventory)){
                                 txtb_color[0] = #71413B;
                                 txtb_color[1] = #BB7547;
                                 txtb_color[2] = #BB7547;
+								speaker_sprite[0] = sprEmployeeBoy_face_normal;
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
                             }
                         }
                         for(var i = 0; i < array_length(text);i++){
-                            speaker_sprite[i] = noone;
                             txtb_snd[i] = sfx_text;
                         }
                     }
@@ -129,9 +137,13 @@ if(!instance_exists(oInventory)){
                         txtb_color[3] = #BB7547;
                         txtb_color[4] = #71413B;
                         txtb_color[5] = #BB7547;
-                    
+						speaker_sprite[0] = sprEmployeeGirl_face_normal;
+						speaker_sprite[1] = sprEmployeeGirl_face_nervous;
+						speaker_sprite[2] = sprEmployeeBoy_face_lost;
+						speaker_sprite[3] = sprEmployeeGirl_face_normal;
+						speaker_sprite[4] = sprEmployeeBoy_face_normal;
+						speaker_sprite[5] = sprEmployeeGirl_face_glad;
                         for(var i = 0; i < array_length(text); i++) {
-                            speaker_sprite[i] = noone;
                             txtb_snd[i] = sfx_text;
                         }
                     }
@@ -224,9 +236,15 @@ if(!instance_exists(oInventory)){
                         txtb_color[4] = #BB7547;
                         txtb_color[5] = #BB7547;
                         txtb_color[6] = #BB7547;
+						speaker_sprite[0] = sprEmployeeGirl_face_nervous;
+						speaker_sprite[1] = sprEmployeeBoy_face_normal;
+						speaker_sprite[2] = sprEmployeeGirl_face_normal;
+						speaker_sprite[3] = sprEmployeeBoy_face_normal;
+						speaker_sprite[4] = sprEmployeeGirl_face_shocked;
+						speaker_sprite[5] = sprEmployeeBoy_face_surprised;
+						speaker_sprite[6] = sprEmployeeGirl_face_nervous;
                     
                         for(var i = 0; i < array_length(text); i++) {
-                            speaker_sprite[i] = noone;
                             txtb_snd[i] = sfx_text;
                         }
                     }
@@ -368,16 +386,17 @@ if(!instance_exists(oInventory)){
                         if (instance_exists(oStore_EmployeeGirl)) {
                             text[0] = _T("mopping_girl");
                             txtb_color[0] = #BB7547;
+							speaker_sprite[0] = sprEmployeeGirl_face_nervous;
                         } else {
                             text[0] = _T("mopping_boy_1");
                             text[1] = _T("mopping_boy_2");
                             txtb_color[0] = #71413B;
                             txtb_color[1] = #71413B;
                             txtb_snd[1] = sfx_text;
-                            speaker_sprite[1] = noone;
+                            speaker_sprite[0] = sprEmployeeBoy_face_lost;
+							speaker_sprite[1] = sprEmployeeBoy_face_normal;
                         }
                     
-                        speaker_sprite[0] = noone;
                         txtb_snd[0] = sfx_text;
                     }
                 
@@ -464,12 +483,18 @@ if(!instance_exists(oInventory)){
                             if(other.girl_alone_interact == 0){
                                 text[0] = _T("shop_girl_first_1");
                                 text[1] = _T("shop_girl_first_2");
+								speaker_sprite[0] = sprEmployeeGirl_face_glad;
+								speaker_sprite[1] = sprEmployeeGirl_face_normal;
                             }else if(other.girl_alone_interact < 3){
                                 text[0] = _T("shop_girl_repeat_1");
                                 text[1] = _T("shop_girl_repeat_2");
+								speaker_sprite[0] = sprEmployeeGirl_face_nervous;
+								speaker_sprite[1] = sprEmployeeGirl_face_normal;
                             }else{
                                 text[0] = _T("shop_girl_later_1");
                                 text[1] = _T("shop_girl_later_2");
+								speaker_sprite[0] = sprEmployeeGirl_face_normal;
+								speaker_sprite[1] = sprEmployeeGirl_face_nervous;
                             }
                     
                             decisions[1] = {
@@ -486,10 +511,13 @@ if(!instance_exists(oInventory)){
                                         text[1] = _T("shop_girl_how_to_shop_2");
                                         text[2] = _T("shop_girl_how_to_shop_3");
                                         text[3] = _T("shop_girl_how_to_shop_4");
+										speaker_sprite[0] = sprEmployeeGirl_face_normal;
+										speaker_sprite[1] = sprEmployeeGirl_face_normal;
+										speaker_sprite[2] = sprEmployeeGirl_face_normal;
+										speaker_sprite[3] = sprEmployeeGirl_face_glad;
                                         for(var i = 0; i < array_length(text); i++){
                                             txtb_color[i] = #BB7547;
                                             txtb_snd[i] = sfx_text;
-                                            speaker_sprite[i] = noone;
                                         }
                                     }
                                 },
@@ -501,11 +529,14 @@ if(!instance_exists(oInventory)){
                                         text[1] = _T("shop_girl_job_2");
                                         text[2] = _T("shop_girl_job_3");
                                         text[3] = _T("shop_girl_job_4");
+										speaker_sprite[0] = sprEmployeeGirl_face_nervous;
+										speaker_sprite[1] = sprEmployeeGirl_face_normal;
+										speaker_sprite[2] = sprEmployeeGirl_face_glad;
+										speaker_sprite[3] = sprEmployeeGirl_face_nervous;
                     
                                         for(var i = 0; i < array_length(text); i++){
                                             txtb_color[i] = #BB7547;
                                             txtb_snd[i] = sfx_text;
-                                            speaker_sprite[i] = noone;
                                         }
                                     }
                                 }
@@ -514,7 +545,6 @@ if(!instance_exists(oInventory)){
                             for(var i = 0; i < array_length(text); i++){
                                 txtb_color[i] = #BB7547;
                                 txtb_snd[i] = sfx_text;
-                                speaker_sprite[i] = noone;
                             }
                         }
                     }else if(!oShop_Basket.en_suelo && array_length(oShop_Basket.items) == 0){
@@ -522,7 +552,7 @@ if(!instance_exists(oInventory)){
                             text[0] = _T("shop_girl_basket_empty");
                             txtb_color[0] = #BB7547;
                             txtb_snd[0] = sfx_text;
-                            speaker_sprite[0] = noone;
+                            speaker_sprite[0] = sprEmployeeGirl_face_normal;
                         }
                     }
                     girl_alone_interact++; 
@@ -537,12 +567,16 @@ if(!instance_exists(oInventory)){
                     if(oShop_Basket.en_suelo){
                         with(_textbox){
                             text[0] = _T("shop_boy_first_1");
+							speaker_sprite[0] = sprEmployeeBoy_face_lost;
                             if(other.boy_alone_interact == 0){
                                 text[1] = _T("shop_boy_first_2");
+								speaker_sprite[1] = sprEmployeeBoy_face_realize;
                             }else if(other.boy_alone_interact < 3){
                                 text[1] = _T("shop_boy_repeat_1");
+								speaker_sprite[1] = sprEmployeeBoy_face_normal;
                             }else{
                                 text[1] = _T("shop_boy_later_1");
+								speaker_sprite[1] = sprEmployeeBoy_face_angry;
                             }
                 
                             decisions[1] = {
@@ -561,10 +595,15 @@ if(!instance_exists(oInventory)){
                                         text[3] = _T("shop_boy_how_to_shop_4");
                                         text[4] = _T("shop_boy_how_to_shop_5");
                                         text[5] = _T("shop_boy_how_to_shop_6");
+										speaker_sprite[0] = sprEmployeeBoy_face_realize;
+										speaker_sprite[1] = sprEmployeeBoy_face_angry;
+										speaker_sprite[2] = sprEmployeeBoy_face_angry;
+										speaker_sprite[3] = sprEmployeeBoy_face_angry;
+										speaker_sprite[4] = sprEmployeeBoy_face_angry;
+										speaker_sprite[5] = sprEmployeeBoy_face_normal;
                                         for(var i = 0; i < array_length(text); i++){
                                             txtb_color[i] = #71413B;
                                             txtb_snd[i] = sfx_text;
-                                            speaker_sprite[i] = noone;
                                         }
                                     }
                                 },
@@ -579,11 +618,17 @@ if(!instance_exists(oInventory)){
                                         text[4] = _T("shop_boy_job_5");
                                         text[5] = _T("shop_boy_job_6");
                                         text[6] = _T("shop_boy_job_7");
+										speaker_sprite[0] = sprEmployeeBoy_face_surprised;
+										speaker_sprite[1] = sprEmployeeBoy_face_normal;
+										speaker_sprite[2] = sprEmployeeBoy_face_normal;
+										speaker_sprite[3] = sprEmployeeBoy_face_realize;
+										speaker_sprite[4] = sprEmployeeBoy_face_angry;
+										speaker_sprite[5] = sprEmployeeBoy_face_angry;
+										speaker_sprite[6] = sprEmployeeBoy_face_normal;
                     
                                         for(var i = 0; i < array_length(text); i++){
                                             txtb_color[i] = #71413B;
                                             txtb_snd[i] = sfx_text;
-                                            speaker_sprite[i] = noone;
                                         }
                                     }
                                 }
@@ -592,7 +637,6 @@ if(!instance_exists(oInventory)){
                             for(var i = 0; i < array_length(text); i++){
                                 txtb_color[i] = #71413B;
                                 txtb_snd[i] = sfx_text;
-                                speaker_sprite[i] = noone;
                             }
                             txtb_color[1] = c_white; 
                         }
@@ -604,8 +648,8 @@ if(!instance_exists(oInventory)){
                             txtb_color[1] = #71413B;
                             txtb_snd[0] = sfx_text;
                             txtb_snd[1] = sfx_text;
-                            speaker_sprite[0] = noone;
-                            speaker_sprite[1] = noone;
+                            speaker_sprite[0] = sprEmployeeBoy_face_surprised;
+                            speaker_sprite[1] = sprEmployeeBoy_face_normal;
                         }
                     }
                     boy_alone_interact++; 
@@ -620,44 +664,55 @@ if(!instance_exists(oInventory)){
 			            if(oShop_Basket.en_suelo){
 			                if(other.both_interact == 0){
 			                    _who_should_welcome = irandom(1);
-			                    _index = 8;
+			                    _index = 7;
 			                    text[0] = _T("shop_both_welcome_1");
 			                    text[1] = _T("shop_both_welcome_2");
 			                    text[2] = _T("shop_both_welcome_3");
 			                    text[3] = _T("shop_both_welcome_4");
-			                    text[4] = _T("shop_both_welcome_5a");
+								speaker_sprite[0] = sprEmployeeBoy_face_lost;
+								speaker_sprite[1] = sprEmployeeGirl_face_normal;
+								speaker_sprite[2] = sprEmployeeBoy_face_realize;
+								speaker_sprite[3] = sprEmployeeGirl_face_normal;
 			                    if(_who_should_welcome == 0){
-			                        text[5] = _T("shop_both_welcome_5a");
-			                        text[6] = _T("shop_both_welcome_6a");
-			                        text[7] = _T("shop_both_welcome_7a");
-			                        text[8] = _T("shop_both_welcome_8a");
-			                        txtb_color[5] = #71413B;
+			                        text[4] = _T("shop_both_welcome_5a");
+			                        text[5] = _T("shop_both_welcome_6a");
+			                        text[6] = _T("shop_both_welcome_7a");
+			                        text[7] = _T("shop_both_welcome_8a");
+			                        txtb_color[4] = #71413B;
+			                        txtb_color[5] = #BB7547;
 			                        txtb_color[6] = #BB7547;
-			                        txtb_color[7] = #BB7547;
-			                        txtb_color[8] = #71413B;							
+			                        txtb_color[7] = #71413B;	
+									speaker_sprite[4] = sprEmployeeBoy_face_shocked;
+									speaker_sprite[5] = sprEmployeeGirl_face_nervous;
+									speaker_sprite[6] = sprEmployeeGirl_face_glad;
+									speaker_sprite[7] = sprEmployeeBoy_face_lost;
 			                    }else{
-			                        text[5] = _T("shop_both_welcome_5b");
-			                        text[6] = _T("shop_both_welcome_6b");
-			                        text[7] = _T("shop_both_welcome_7b");
-			                        txtb_color[5] = #71413B;
-			                        txtb_color[6] = c_white;
-			                        txtb_color[7] = #BB7547;
-			                        _index = 7;
+			                        text[4] = _T("shop_both_welcome_5b");
+			                        text[5] = _T("shop_both_welcome_6b");
+			                        text[6] = _T("shop_both_welcome_7b");
+			                        txtb_color[4] = #71413B;
+			                        txtb_color[5] = c_white;
+			                        txtb_color[6] = #BB7547;
+									speaker_sprite[4] = sprEmployeeBoy_face_angry;
+									speaker_sprite[5] = sprEmployeeBoy_face_normal;
+									speaker_sprite[6] = sprEmployeeGirl_face_nervous;
+			                        _index = 6;
 			                    }
 			                    txtb_color[0] = #71413B;
 			                    txtb_color[1] = #BB7547;
-			                    txtb_color[2] = #BB7547;
-			                    txtb_color[3] = #71413B;
-			                    txtb_color[4] = #BB7547;
+			                    txtb_color[2] = #71413B;
+			                    txtb_color[3] = #BB7547;
 			                }else if(other.both_interact < 3){
 			                    text[0] = _T("shop_both_repeat_1");
 			                    text[1] = _T("shop_both_repeat_2");
 			                    text[2] = _T("shop_both_repeat_3");
 			                    _index = 2;
-			                    txtb_color[0] = c_white;
-			                    txtb_color[1] = #71413B;
+			                    txtb_color[0] = #71413B;
+			                    txtb_color[1] = #BB7547;
 			                    txtb_color[2] = #BB7547;
-			                    txtb_color[3] = #BB7547;
+								speaker_sprite[0] = sprEmployeeBoy_face_realize;
+								speaker_sprite[1] = sprEmployeeGirl_face_nervous;
+								speaker_sprite[2] = sprEmployeeGirl_face_glad;
 			                }else{
 			                    text[0] = _T("shop_both_later_1");
 			                    text[1] = _T("shop_both_later_2");
@@ -666,6 +721,9 @@ if(!instance_exists(oInventory)){
 			                    txtb_color[0] = #71413B;
 			                    txtb_color[1] = #BB7547;
 			                    txtb_color[2] = #BB7547;
+								speaker_sprite[0] = sprEmployeeBoy_face_angry;
+								speaker_sprite[1] = sprEmployeeGirl_face_shocked;
+								speaker_sprite[2] = sprEmployeeGirl_face_nervous;
 			                }
 
 			                var _duck_unlocked = (global.DuckStory >= 1);
@@ -697,12 +755,17 @@ if(!instance_exists(oInventory)){
 			                        txtb_color[2] = #BB7547;
 			                        txtb_color[3] = #BB7547;
 			                        txtb_color[4] = #BB7547;
-			                        txtb_color[5] = #BB7547;
-			                        txtb_color[6] = #71413B;
-			                        txtb_color[7] = #BB7547;
+			                        txtb_color[5] = #71413B;
+									speaker_sprite[0] = sprEmployeeBoy_face_angry;
+									speaker_sprite[1] = sprEmployeeGirl_face_normal;
+									speaker_sprite[2] = sprEmployeeGirl_face_nervous;
+									speaker_sprite[3] = sprEmployeeGirl_face_normal;
+									speaker_sprite[4] = sprEmployeeGirl_face_normal;
+									speaker_sprite[5] = sprEmployeeBoy_face_normal;
+									
+									
 			                        for(var i = 0; i<array_length(text);i++){
 			                            txtb_snd[i] = sfx_text;
-			                            speaker_sprite[i] = noone;
 			                        }
 			                    }
 			                };
@@ -716,14 +779,17 @@ if(!instance_exists(oInventory)){
 			                        text[1] = _T("shop_both_job_2");
 			                        text[2] = _T("shop_both_job_3");
 			                        text[3] = _T("shop_both_job_4");
-			                        txtb_color[0] = c_white;
-			                        txtb_color[1] = #BB7547;
-			                        txtb_color[2] = #71413B;
-			                        txtb_color[3] = #BB7547;
-			                        txtb_color[4] = #71413B;
+			                        txtb_color[0] = #BB7547;
+			                        txtb_color[1] = #71413B;
+			                        txtb_color[2] = #BB7547;
+			                        txtb_color[3] = #71413B;
+									speaker_sprite[0] = sprEmployeeGirl_face_normal;
+									speaker_sprite[1] = sprEmployeeBoy_face_normal;
+									speaker_sprite[2] = sprEmployeeGirl_face_nervous;
+									speaker_sprite[3] = sprEmployeeBoy_face_normal;
+									
 			                        for(var i = 0; i < array_length(text);i++){
 			                            txtb_snd[i] = sfx_text;
-			                            speaker_sprite[i] = noone;
 			                        }
 			                    }
 			                };
@@ -891,7 +957,6 @@ if(!instance_exists(oInventory)){
 
 			                for(var i = 0;i < array_length(text);i++){
 			                    txtb_snd[i] = sfx_text;
-			                    speaker_sprite[i] = noone;
 			                }
 			            }else if(!oShop_Basket.en_suelo && array_length(oShop_Basket.items) == 0){
 			                _who_speaks_again = irandom(1);
