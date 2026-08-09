@@ -25,6 +25,7 @@ function New_Game(){
     global.Platformer_Final_Score = 0;
 	global.StoreNumberStory = 0;
 	global.DuckStory = 0;
+	global.TOMBSTONE = 0;
     
     global.WEATHER = [];
 	global.TURNS = []

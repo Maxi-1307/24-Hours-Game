@@ -25,6 +25,58 @@ if (option_selection == 0) {
     draw_text_transformed(275 + menu_x_offset, 340 + base_y, _T("btn_quit"), 1.5, 1.5, 0); 
 }
 
+
+if (reset_confirm) {
+    var cam_x = camera_get_view_x(view_camera[0]);
+    var cam_y = camera_get_view_y(view_camera[0]);
+    var cam_w = camera_get_view_width(view_camera[0]);
+    var cam_h = camera_get_view_height(view_camera[0]);
+    
+    //Fomdo
+    draw_set_alpha(0.7);
+    draw_set_color(c_black);
+    draw_rectangle(cam_x, cam_y, cam_x + cam_w, cam_y + cam_h, false);
+    draw_set_alpha(1);
+    
+    //Cuadro de dialogo
+    var box_w = 400;
+    var box_h = 150;
+    var box_x = cam_x + (cam_w / 2) - box_w / 2;
+    var box_y = cam_y + (cam_h / 2) - box_h / 2;
+    
+    // Fondo cuadrdo
+    draw_set_alpha(0.9);
+    draw_set_color(c_black);
+    draw_rectangle(box_x, box_y, box_x + box_w, box_y + box_h, false);
+    draw_set_alpha(1);
+    
+    // Borde del cuadrado
+    draw_set_color(c_yellow);
+    draw_rectangle(box_x, box_y, box_x + box_w, box_y + box_h, true);
+    
+    //Title
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_set_color(c_white);
+    draw_text_transformed(cam_x + cam_w / 2, box_y + 40, "ARE YOU SURE?", 1.5, 1.5, 0);
+    
+    //Subtitle
+    draw_set_color(c_yellow);
+    draw_text_transformed(cam_x + cam_w / 2, box_y + 80, "This will delete ALL saved progress!",0.5,0.5,0);
+    
+    //Opciones
+    draw_set_color(c_aqua);
+    draw_set_font(MainFont);
+    draw_text_transformed(box_x + 80, box_y + 120, "[Z] YES", 1.2, 1.2, 0);
+    
+    draw_set_color(c_red);
+    draw_text_transformed(box_x + box_w - 110, box_y + 120, "[X] NO", 1.2, 1.2, 0);
+    
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+}
+
+
 if (menu_state == 2 || menu_state == 4) {
 	if (global.Language == 0) {add = 15;}
 	else

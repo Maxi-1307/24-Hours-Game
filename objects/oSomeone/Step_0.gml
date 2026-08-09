@@ -111,7 +111,7 @@ if(interact == 0){
 	}
 	if(state == 8 && !instance_exists(oTextBox)){
 		alarm[3] = game_get_speed(gamespeed_fps) * 2;
-		image_alpha = 0;
+		y +=5;
 		state = 8.5;
 		interact = 1;
 		random_odd = irandom_range(3,6);

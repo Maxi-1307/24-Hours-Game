@@ -1,5 +1,5 @@
 event_inherited();
-if (variable_global_exists("Is_Indoors") && !global.Is_Indoors) {
+if (variable_global_exists("Is_Indoors")  && !global.Is_Indoors && image_index== 1 ) {
     if (oTimeAtmosphere.current_alpha > 0) {
         
         gpu_set_blendmode(bm_add);

@@ -26,6 +26,7 @@ function LoadGame(){
 		global.StoreNumberStory = _data.store_number_story
 		global.TURNS = _data.storeturns;
 		global.DuckStory = _data.duck_story;
+		global.TOMBSTONE = _data.tombstone;
         
         if (variable_struct_exists(_data, "musical_highscore_saved")) {
             global.Musical_HighScore_SAVED = _data.musical_highscore_saved;

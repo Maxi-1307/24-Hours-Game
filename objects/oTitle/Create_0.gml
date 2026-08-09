@@ -9,6 +9,11 @@ menu_target_offset = 0;
 
 menu_x_offset = 0;
 
+
+reset_confirm = false;
+reset_confirm_timer = 0;
+
+
 settings_index = 0;
 settings_editing = false;
 key_hold_timer = 0;

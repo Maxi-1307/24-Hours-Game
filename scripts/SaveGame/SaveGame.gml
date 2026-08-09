@@ -27,7 +27,8 @@ function SaveGame(){
 		storeturns: global.TURNS,
 		
 		store_number_story: global.StoreNumberStory,
-		duck_story: global.DuckStory
+		duck_story: global.DuckStory,
+		tombstone: global.TOMBSTONE
     };
 
     var _json_string = json_stringify(_save_data);

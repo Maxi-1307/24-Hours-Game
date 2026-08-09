@@ -1,7 +1,26 @@
 audio_group_set_gain(audiogroupVolume, global.Master_Volume / 100, 0);
 audio_group_set_gain(audiogroupVolumeSFX, global.SFX_Volume / 100, 0);
 
+
 if (menu_state == 0) {
+    if (reset_confirm) {
+        reset_confirm_timer++;
+        
+        if (keyboard_check_pressed(global.ConfirmKey)) {
+            file_delete("save_data.json");
+            reset_confirm = false;
+            reset_confirm_timer = 0;
+            audio_play_sound(sfx_select, 1, false);
+        }
+        else if (keyboard_check_pressed(global.CancelKey)) {
+            reset_confirm = false;
+            reset_confirm_timer = 0;
+            audio_play_sound(sfx_select, 1, false);
+        }
+        
+        exit;
+    }
+    
     if (keyboard_check_pressed(global.DownKey) && selection < 2) {
         selection++;
         audio_play_sound(sfx_menu_move, 1, false);
@@ -14,19 +33,33 @@ if (menu_state == 0) {
 
     if (keyboard_check_pressed(global.ConfirmKey)) {
         audio_play_sound(sfx_select, 1, false);
+        
         switch (selection) {
-            case 0: menu_state = 5; sprite_index = sprFade; image_speed = 0.5; break;
-            case 1: menu_state = 1; break;
-            case 2: game_end(); break;
+            case 0: 
+                menu_state = 5; 
+                sprite_index = sprFade; 
+                image_speed = 0.5;
+                break;
+            case 1: 
+                menu_state = 1; 
+                break;
+            case 2: 
+                game_end(); 
+                break;
         }
     }
-    if (keyboard_check_pressed(global.CancelKey) && !keyboard_check_pressed(global.ConfirmKey) && selection == 0) {
-        file_delete("save_data.json");
-        audio_play_sound(sfx_select, 1, false);
+    
+    if (keyboard_check_pressed(global.CancelKey) && selection == 0) {
+        if (file_exists("save_data.json")) {
+            reset_confirm = true;
+            reset_confirm_timer = 0;
+            audio_play_sound(sfx_select, 1, false);
+        }
     }
 
     menu_y_offset = lerp(menu_y_offset, 0, 0.03);
 }
+
 
 if (menu_state == 1) {
     menu_x_offset = lerp(menu_x_offset, -600, 0.04);
