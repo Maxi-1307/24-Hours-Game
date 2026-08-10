@@ -1,5 +1,5 @@
 if (keyboard_check_pressed(ord("F"))) {
-    global.game_minutes += 396;
+    global.game_minutes = 258; //global.game_minutes += 396;
     aply = false;
 }
 
