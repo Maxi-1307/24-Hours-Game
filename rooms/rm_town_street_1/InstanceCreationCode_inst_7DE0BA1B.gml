@@ -1,0 +1,1 @@
+c_spawn_side = "right";

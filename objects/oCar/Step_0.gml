@@ -138,7 +138,7 @@ speed = lerp(speed, max_speed, 0.05);
 if (speed > 0.5) honked = false;
 }
 
-if (_on_turn != noone) {
+if (_on_turn != noone && (_on_turn.type == 0 || _on_turn.type == 1)) {
 if (last_marker != _on_turn && direction == _on_turn.direccion_afectada) {
 if (random(1) < _on_turn.probabilidad_giro) {
 direction = _on_turn.new_dir;

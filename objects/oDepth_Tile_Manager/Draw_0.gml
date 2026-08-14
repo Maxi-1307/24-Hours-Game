@@ -15,7 +15,7 @@ if(variable_global_exists("Is_Indoors")){
 	            _matrix_shadow[4] = _smd.skewX; 
             
 	            matrix_set(matrix_world, _matrix_shadow);
-            
+				
 	            draw_sprite_ext(_smd.spriteIndex,  _smd.imageIndex, 0, 0, 1, 1, 0, c_black,0.55 );
             
 	            matrix_set(matrix_world, _matrix_antigua);

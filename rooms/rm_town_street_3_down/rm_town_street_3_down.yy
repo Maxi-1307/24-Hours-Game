@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_town_street_3_down",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_town_street_3_down/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -29,6 +29,8 @@
     {"name":"inst_12E7D509","path":"rooms/rm_town_street_3_down/rm_town_street_3_down.yy",},
     {"name":"inst_16F75C1E","path":"rooms/rm_town_street_3_down/rm_town_street_3_down.yy",},
     {"name":"inst_F1012AD","path":"rooms/rm_town_street_3_down/rm_town_street_3_down.yy",},
+    {"name":"inst_34BD9650","path":"rooms/rm_town_street_3_down/rm_town_street_3_down.yy",},
+    {"name":"inst_25E09AC7","path":"rooms/rm_town_street_3_down/rm_town_street_3_down.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -40,6 +42,8 @@
       ],"layers":[],"name":"Objects","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Traffic","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_33FF6685","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_33FF6685","objectId":{"name":"oSigns","path":"objects/oSigns/oSigns.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":262.0,"y":415.0,},
+        {"$GMRInstance":"v4","%Name":"inst_34BD9650","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_34BD9650","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":10.0,"y":370.0,},
+        {"$GMRInstance":"v4","%Name":"inst_25E09AC7","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25E09AC7","objectId":{"name":"oTurnCarMarkWay","path":"objects/oTurnCarMarkWay/oTurnCarMarkWay.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.317377,"scaleY":3.35,"x":357.0,"y":370.0,},
       ],"layers":[],"name":"Traffic","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Walls","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_388BB50A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_388BB50A","objectId":{"name":"oWall","path":"objects/oWall/oWall.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":13.05,"scaleY":15.55,"x":130.5,"y":155.5,},

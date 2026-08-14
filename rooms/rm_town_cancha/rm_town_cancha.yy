@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_town_cancha",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_town_cancha/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,

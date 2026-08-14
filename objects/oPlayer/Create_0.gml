@@ -1,3 +1,5 @@
+global.next_bus = false;
+
 xspd = 0;
 yspd = 0;
 

@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_town_street_3",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_town_street_3/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -25,6 +25,7 @@
     {"name":"inst_2AF2CDF0","path":"rooms/rm_town_street_3/rm_town_street_3.yy",},
     {"name":"inst_683EA08F","path":"rooms/rm_town_street_3/rm_town_street_3.yy",},
     {"name":"inst_E709E5","path":"rooms/rm_town_street_3/rm_town_street_3.yy",},
+    {"name":"inst_4A749832","path":"rooms/rm_town_street_3/rm_town_street_3.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -46,8 +47,9 @@
       ],"layers":[],"name":"Walls","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Traffic","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_6E8C7F95","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6E8C7F95","objectId":{"name":"oZebraWay","path":"objects/oZebraWay/oZebraWay.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":90.0,"scaleX":1.1500001,"scaleY":3.1,"x":310.0,"y":312.0,},
-        {"$GMRInstance":"v4","%Name":"inst_2060C1D0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2060C1D0","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":209.0,},
-        {"$GMRInstance":"v4","%Name":"inst_61616111","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61616111","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":429.0,},
+        {"$GMRInstance":"v4","%Name":"inst_2060C1D0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2060C1D0","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":209.0,},
+        {"$GMRInstance":"v4","%Name":"inst_4A749832","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4A749832","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":90.0,"scaleX":1.0,"scaleY":1.0,"x":313.0,"y":477.5,},
+        {"$GMRInstance":"v4","%Name":"inst_61616111","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_61616111","objectId":{"name":"oCarSpawner","path":"objects/oCarSpawner/oCarSpawner.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":429.0,},
         {"$GMRInstance":"v4","%Name":"inst_A08F707","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_A08F707","objectId":{"name":"oSigns","path":"objects/oSigns/oSigns.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":352.0,"y":288.0,},
         {"$GMRInstance":"v4","%Name":"inst_344F986C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_344F986C","objectId":{"name":"oTurnCarMarkWay","path":"objects/oTurnCarMarkWay/oTurnCarMarkWay.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.3173766,"scaleY":3.35,"x":342.0,"y":213.0,},
         {"$GMRInstance":"v4","%Name":"inst_22DB7227","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22DB7227","objectId":{"name":"oTurnCarMarkWay","path":"objects/oTurnCarMarkWay/oTurnCarMarkWay.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.3173766,"scaleY":3.35,"x":343.0,"y":434.0,},

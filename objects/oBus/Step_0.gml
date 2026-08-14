@@ -237,7 +237,7 @@ else {
     }
 }
 
-if (_on_turn != noone) {
+if (_on_turn != noone && (_on_turn.type == 1 || _on_turn.type == 2)) {
 
     if (last_marker != _on_turn
     && direction == _on_turn.direccion_afectada) {
@@ -266,4 +266,25 @@ if (x < -300
 || y > room_height + 300) {
 
     instance_destroy();
+}
+if (room == rm_town_street_3)
+{
+	if (y <= 429)
+	{
+		direction = 180;
+		image_angle = 180;
+	}
+}
+if (room == rm_town_street_2)
+{
+	if (x <= 232)
+	{
+		direction = -90;
+		image_angle = -90;
+	}
+	else
+	{
+		direction = 180;
+		image_angle = 180;
+	}
 }

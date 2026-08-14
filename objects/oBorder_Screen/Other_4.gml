@@ -5,9 +5,6 @@ var proximo_sprite = noone;
 
 if (string_pos("town", nombre_room) > 0) {
     proximo_sprite = sprBorder_Screen_Town;
-	if(!audio_is_playing(dreiton)){
-		audio_play_sound(dreiton,1,true);
-	}
 }
 else if (string_pos("musical", nombre_room) > 0) {
     proximo_sprite = sprBorder_Screen_Musical;
