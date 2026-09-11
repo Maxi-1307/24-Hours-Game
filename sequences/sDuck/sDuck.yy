@@ -26,8 +26,8 @@
   },
   "name":"sDuck",
   "parent":{
-    "name":"24_hours",
-    "path":"24_hours.yyp",
+    "name":"Sequences",
+    "path":"folders/Sequences.yy",
   },
   "playback":0,
   "playbackSpeed":60.0,

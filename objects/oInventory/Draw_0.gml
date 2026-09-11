@@ -112,70 +112,96 @@ if (menu_state == 3) {
     draw_text_transformed(camera_x + 180, camera_y + 170, "$" + string(global.Money), 0.7, 0.7, 0);
 }
 
-// ===== TELÉFONO (menu_state = 4) =====
+// TELEFONO
 if (menu_state == 4) {
     var total = floor(global.game_minutes);
     var hours = (total div 60) mod 24;
     var minutes = total mod 60;
+
     var h = string_replace_all(string_format(hours, 2, 0), " ", "0");
     var m = string_replace_all(string_format(minutes, 2, 0), " ", "0");
-    
-    draw_sprite_ext(sprCellPhone_UI, frame_cell, camera_x + 270, camera_y + 170, 2.5, 3, 0, c_white, 1);
-    
+
+    // INTERFAZ DEL TELEFONO
+    draw_sprite_ext(sprCellPhone_UI_new,frame_cell,camera_x + 252,camera_y + 153.5,1.58,2.55, 0,c_white,1 );
+
     if (frame_cell == 1) {
-        draw_text_transformed(camera_x + 244, camera_y + 130, h + ":" + m, 0.6, 0.6, 0);
-        draw_text_transformed(camera_x + 244, camera_y + 150, "Sunday", 0.5, 0.5, 0);
-        
-        // Call
-        var call_color = !phone_submenu ? c_aqua : c_white;
-        draw_set_colour(call_color);
-        draw_text_transformed(camera_x + 244, camera_y + 170, "Call", 0.5, 0.5, 0);
-        
-        // Close
-        var close_color = phone_submenu ? c_aqua : c_white;
-        draw_set_colour(close_color);
-        draw_text_transformed(camera_x + 244, camera_y + 190, "Close", 0.5, 0.5, 0);
-        
-        // Cursor
-        var cursor_y2 = camera_y + 180 + (phone_submenu ? 20 : 0);
-        draw_sprite_ext(sprCursor, 0, camera_x + 230, cursor_y2, 0.7, 0.7, 0, c_white, 1);
-        
+
+        // ICONOS DEL SISTEMA
+        draw_sprite_ext(sprSystem_Icons,0,camera_x + 422 - 160,camera_y + 94.5,0.75, 0.55,0,c_white,1);
+
+        draw_sprite_ext(sprSystem_Icons,1,camera_x + 440 - 160,camera_y + 94.5,0.7, 0.55,0,c_white,1 );
+
+        // HOUR
+        draw_text_transformed(camera_x + 373.25 - 160,camera_y + 113.4, h + ":" + m,0.91,0.91, 0);
+
+        // DAY
+        draw_text_transformed(camera_x + 373 - 160,camera_y + 87,"Sunday", 0.4, 0.4, 0 );
+
+		//ICONS//
+        for (var i = 0; i < 6; i++) {
+
+            var xx = i mod 3;
+            var yy = i div 3;
+
+            draw_sprite_ext(sprCell_Icons,i,camera_x + 228 + (24 * xx),camera_y + 173 + (27 * yy),1, 1, 0,c_white,1);
+        }
+		//ICONS CURSOR//
+        var cursor_icons_x = camera_x + 388 - 160 + (24 * cell_cursor_col);
+        var cursor_icons_y = camera_y + 173 + (27 * cell_cursor_row);
+
+        draw_sprite_ext(sprCell_IconsCursor,0,cursor_icons_x,cursor_icons_y,1,1,0,c_white,1);
+
         draw_set_colour(c_white);
     }
 }
 
 //CONTACTS//
 if (menu_state == 5) {
-    draw_sprite_ext(sprCellPhone_UI, frame_cell, camera_x + 270, camera_y + 170, 2.5, 3, 0, c_white, 1);
+	//cellphone UI
+     draw_sprite_ext(sprCellPhone_UI_new,2,camera_x + 252,camera_y + 153.5,1.58,2.55, 0,c_white,1 );
     
     if (frame_cell == 1) {
-        draw_set_colour(c_white);
-        draw_text_transformed(camera_x + 244, camera_y + 125, "CALL", 0.5, 0.5, 0);
+		draw_rectangle_colour(camera_x +373 - 160,camera_y + 86,camera_x +448 - 160 ,camera_y + 105,c_black,c_black,c_black,c_black,0);
+		
+		
+		 // ICONOS DEL SISTEMA
+        draw_sprite_ext(sprSystem_Icons,0,camera_x + 422 - 160,camera_y + 94.5,0.75, 0.55,0,c_white,1);
+
+        draw_sprite_ext(sprSystem_Icons,1,camera_x + 440 - 160,camera_y + 94.5,0.7, 0.55,0,c_white,1 );
+		// DAY
+		draw_text_transformed(camera_x + 373 - 160,camera_y + 87,"Sunday", 0.4, 0.4, 0 );
+		
+		draw_rectangle_colour(camera_x +373 - 160,camera_y + 105,camera_x +448 - 160 ,camera_y + 125,c_green,c_green,c_green,c_green,0);
         
-        var contact_y = 145;
+		draw_set_colour(c_black);
+        draw_text_transformed(camera_x + 375 - 160, camera_y + 106, "CONTACTS", 0.5, 0.5, 0);
+        
+        var contact_y = 126;
         var max_contacts = array_length(global.PhoneContactsList);
         
         for (var i = 0; i < max_contacts; i++) {
             var contact_id = global.PhoneContactsList[i];
-            var color = (i == contact_index) ? c_aqua : c_white;
+            var color = (i == contact_index) ? c_aqua : c_black;
             
             if (variable_struct_exists(global.PhoneContacts, contact_id)) {
                 var contact_data = variable_struct_get(global.PhoneContacts, contact_id);
                 var display_name = contact_data.name;
                 draw_set_colour(color);
-                draw_text_transformed(camera_x + 244, camera_y + contact_y, display_name, 0.5, 0.5, 0);
-                contact_y += 16;
+				draw_rectangle_colour(camera_x +373 - 160,camera_y + contact_y + 16,camera_x +448 - 160 ,camera_y + contact_y + 17,c_gray,c_gray,c_gray,c_gray,0);
+				draw_sprite_ext(sprSystem_Icons,2,camera_x + 392.5 - 160,camera_y + contact_y + 8,0.79,0.79,0,c_white,1);
+                draw_text_transformed(camera_x + 402 - 160, camera_y + contact_y, display_name, 0.5, 0.5, 0);
+                contact_y += 19;
             }
         }
         
         //BACK
-        var volver_color = (contact_index >= max_contacts) ? c_aqua : c_white;
+        var volver_color = (contact_index >= max_contacts) ? c_aqua : c_black;
         draw_set_colour(volver_color);
-        draw_text_transformed(camera_x + 244, camera_y + contact_y, "Back", 0.5, 0.5, 0);
+        draw_text_transformed(camera_x + 384.6 - 160, camera_y + contact_y, "Back", 0.5, 0.5, 0);
         
         //CURSOR
-        var cursor_x3 = camera_x + 230;
-        var cursor_y3 = camera_y + 155 + (contact_index * 15);
+        var cursor_x3 = camera_x + 378 - 160;
+        var cursor_y3 = camera_y + 134 + (contact_index * 19);
         draw_sprite_ext(sprCursor, 0, cursor_x3, cursor_y3, 0.7, 0.7, 0, c_white, 1);
         
         draw_set_colour(c_white);

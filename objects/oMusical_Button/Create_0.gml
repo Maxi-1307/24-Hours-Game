@@ -10,4 +10,4 @@ escala_x = 1;
 escala_y = 1;
 escala_base = 1; 
 
-alfa_actual = 0.5; 
+alfa_actual = 0.5;

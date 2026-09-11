@@ -8,6 +8,7 @@ switch(carril) {
 image_index = carril;
 
 if (!global.Musical_Can_Play) exit;
+
 if (nota_fallada) {
     color_cola = make_color_rgb(100, 100, 100);
 } else if (siendo_sostenida) {
@@ -38,14 +39,19 @@ if (!siendo_sostenida && !nota_fallada && y > 175) {
     nota_fallada = true;
     global.Musical_Missed += 1;
     
+    with (oMusical_Controller) {
+        combo_actual = 0;
+        combo_splash_alpha = 0;
+    }
+    
     if (instance_exists(oMusical_Controller)) {
         oMusical_Controller.color_marco = c_red;
         oMusical_Controller.marco_timer = game_get_speed(gamespeed_fps) * 0.4;
         oMusical_Controller.flash_rojo_alfa = 0.35;
-		audio_play_sound(sfx_Musical_GuitarMistake,1,false);
+        audio_play_sound(sfx_Musical_GuitarMistake, 1, false);
     }
+    
 }
-
 
 if (y - altura_cola > 185) {
     instance_destroy();

@@ -8,13 +8,7 @@ if (!place_meeting(x, y, oCar) && !place_meeting(x, y, oBus) && point_distance(x
 
 	    _car.direction = image_angle;
 	    _car.image_angle = image_angle;
-	}
-	else
-	if (r == 1 && (
-    (global.game_minutes >= 258 && global.game_minutes <= 259.2)
-    ||
-    (global.game_minutes >= 162 && global.game_minutes <= 163.2)
-	))
+	}else if (r == 1 && ((global.game_minutes >= 258 && global.game_minutes <= 259.2)||(global.game_minutes >= 162 && global.game_minutes <= 163.2)))
 	{
 	    var cb = false;
 	    var xx = 0;

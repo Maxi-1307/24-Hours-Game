@@ -24,7 +24,7 @@ if(using_piano){
     draw_set_halign(fa_center);
     draw_set_color(c_white);
 
-    draw_text_transformed(cx + gui_w * 0.5, cy + bar_y - 14,"Piano - Octava " + string(current_octave),0.5,0.5,0);
+    draw_text_transformed(cx + gui_w * 0.5, cy + bar_y - 14,string(name_type) + " - Octava " + string(current_octave),0.5,0.5,0);
 
     var notes;
 
@@ -105,4 +105,8 @@ if(using_piano){
     draw_set_alpha(1);
     draw_set_color(c_white);
     draw_set_halign(fa_left);
+}
+	
+/*if (variable_global_exists("pf_grid")) {
+    mp_grid_draw(global.pf_grid);
 }

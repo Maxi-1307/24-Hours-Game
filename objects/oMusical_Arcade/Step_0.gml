@@ -74,6 +74,10 @@ if (place_meeting(x, y, oPlayer) && keyboard_check_pressed(global.ConfirmKey) &&
 									oPlayer.visible = false;
 									global.CanMove = false;
 									
+									with(oMusicer){
+										PauseMusic();
+									}
+									
 									instance_destroy(oTextBox); 									
 								},
 								right: function(){
@@ -84,6 +88,10 @@ if (place_meeting(x, y, oPlayer) && keyboard_check_pressed(global.ConfirmKey) &&
 									global.Money -= 15;
 									oPlayer.visible = false;
 									global.CanMove = false;
+									
+									with(oMusicer){
+										PauseMusic();
+									}
 									
 									instance_destroy(oTextBox); 
 								}

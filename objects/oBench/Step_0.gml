@@ -19,19 +19,29 @@ if (global.CanMove && (!instance_exists(oTextBox)) && oPlayer.sprite_index != sp
                 text[2] = _T("bench_rest");
                 text[3] = _T("bench_leave");
                 
-			    for(var i = 0; i < 10; i++){
-			        speaker_sprite[i] = noone;
-			        txtb_snd[i] = sfx_text;
-			        txtb_color[i] = c_white;
-				}	
+                for(var i = 0; i < 10; i++){
+                    speaker_sprite[i] = noone;
+                    txtb_snd[i] = sfx_text;
+                    txtb_color[i] = c_white;
+                }	
                 
                 decision_script[1] = {
                     left: function() {
                         global.CanMove = false;
-						global.CanInventory = false;
+                        global.CanInventory = false;
+						oPlayer.state = PLAYER_STATE.INTERACTING;
                         oPlayer.x = other.interact_id.x; 
                         oPlayer.y = other.interact_id.y - 17;
                         oPlayer.sprite_index = sprPlayerSitting;
+                        oPlayer.image_speed = 0;
+                        oPlayer.image_index = 0;
+                        
+                        with(other.interact_id) {
+                            player_sitting = true;
+                            bench_frame = 1;
+                            image_index = 1;
+                            alarm[0] = game_get_speed(gamespeed_fps) * 15;
+                        }
                     }
                 };
             }
@@ -39,18 +49,26 @@ if (global.CanMove && (!instance_exists(oTextBox)) && oPlayer.sprite_index != sp
     }
 }
 
+
 if (oPlayer.sprite_index == sprPlayerSitting && oPlayer.x == x && oPlayer.y == y - 17) {
-	oPlayer.depth = depth - 1;
+    oPlayer.depth = depth - 1;
     var _get_up = keyboard_check(global.UpKey) || keyboard_check(global.DownKey) || 
                   keyboard_check(global.LeftKey) || keyboard_check(global.RightKey);
     
     if (_get_up) {
-		if(instance_exists(oTextBox)){
-			instance_destroy(oTextBox);
-		}
+        if(instance_exists(oTextBox)){
+            instance_destroy(oTextBox);
+        }
+        
+        player_sitting = false;
+        bench_frame = 0;
+        image_index = 0;
+        alarm[0] = -1;
+        
         global.CanMove = true;
+		oPlayer.state = PLAYER_STATE.NORMAL;
         oPlayer.sprite_index = sprPlayerDown; 
         oPlayer.y += 27; 
-		global.CanInventory = true;
+        global.CanInventory = true;
     }
 }

@@ -35,7 +35,7 @@ if (estado_juego == "intro") {
             if (timer_intro >= game_get_speed(gamespeed_fps) * 1.2) {
                 fase_intro = "conteo_3";
                 timer_intro = 0;
-				audio_play_sound(sfx_Countdown,1,false);
+                audio_play_sound(sfx_Countdown,1,false);
             }
             break;
             
@@ -44,7 +44,7 @@ if (estado_juego == "intro") {
             if (timer_intro >= game_get_speed(gamespeed_fps) * 1.0) {
                 fase_intro = "conteo_2";
                 timer_intro = 0;
-				audio_play_sound(sfx_Countdown,1,false);
+                audio_play_sound(sfx_Countdown,1,false);
             }
             break;
             
@@ -53,7 +53,7 @@ if (estado_juego == "intro") {
             if (timer_intro >= game_get_speed(gamespeed_fps) * 1.0) {
                 fase_intro = "conteo_1";
                 timer_intro = 0;
-				audio_play_sound(sfx_Countdown,1,false);
+                audio_play_sound(sfx_Countdown,1,false);
             }
             break;
             
@@ -103,6 +103,7 @@ if (estado_juego == "intro") {
 if (global.Musical_Can_Play && audio_stream != noone) {
     
     var _tiempo_actual = audio_sound_get_track_position(audio_stream);
+    
     if (global.Musica_Seleccionada == snd_Test_TVWORLD) {
         
         if (_tiempo_actual >= 15.0 && _tiempo_actual < 15.1 && !variable_instance_exists(id, "_eff_tv_15")) {
@@ -137,6 +138,8 @@ if (global.Musical_Can_Play && audio_stream != noone) {
     
     if (_tiempo_actual >= audio_sound_length(audio_stream) - 0.05) {
         global.Musical_Can_Play = false;
+        oMusical_Player.image_speed = 0;
+        oMusical_Player.sprite_index = sprMusical_Player_Idle;
         estado_juego = "resultados";
         sub_fase_final = "congelado";
         timer_final = 0;
@@ -172,6 +175,46 @@ if (global.Musical_Can_Play && audio_stream != noone) {
     }
 }
 
+if (combo_splash_alpha > 0) {
+    combo_splash_timer++;
+    combo_splash_alpha = max(0, 1 - (combo_splash_timer / 30));
+    combo_splash_scale = 0.5 + (combo_splash_timer / 30) * 1.5;
+    
+    if (combo_splash_alpha <= 0) {
+        combo_splash_alpha = 0;
+    }
+}
+
+if (global.Musical_Score >= siguiente_hito_publico) {
+    siguiente_hito_publico += 200;
+    instance_create_layer(160, 260, "Audience", oMusical_Audience);
+}
+/*
+if (modo_grabacion && global.Musical_Can_Play && audio_stream != noone) {
+    if (keyboard_check_pressed(ord("Z"))) {
+        var _segundo_actual = audio_sound_get_track_position(audio_stream);
+        _segundo_actual = floor(_segundo_actual * 100) / 100;
+        
+        show_debug_message("    [" + string(_segundo_actual) + ", " + string(carril_simulado) + ", 0],");
+        
+        var _color_chisqa = c_white;
+        var _target_x = 125;
+        switch(carril_simulado) {
+            case 0: _target_x = 125; _color_chisqa = make_color_rgb(255, 60, 60);  break;
+            case 1: _target_x = 147; _color_chisqa = make_color_rgb(60, 255, 100); break;
+            case 2: _target_x = 168; _color_chisqa = make_color_rgb(60, 180, 255); break;
+            case 3: _target_x = 190; _color_chisqa = make_color_rgb(255, 230, 40); break;
+        }
+        repeat(4) {
+            var _chispa = instance_create_layer(_target_x, 161, "Particles", oMusical_Spark);
+            _chispa.color_chispa = _color_chisqa;
+        }
+        
+        carril_simulado++;
+        if (carril_simulado > 3) carril_simulado = 0;
+    }
+}
+*/
 if (estado_juego == "resultados") {
     timer_final++;
     
@@ -281,35 +324,5 @@ if (estado_juego == "resultados") {
                 finish_y[i] = lerp(finish_y[i], finish_target_y[i], 0.15); 
             }
         }
-    }
-}
-
-if (global.Musical_Score >= siguiente_hito_publico) {
-    siguiente_hito_publico += 200;
-    instance_create_layer(160, 260, "Audience", oMusical_Audience);
-}
-
-if (modo_grabacion && global.Musical_Can_Play && audio_stream != noone) {
-    if (keyboard_check_pressed(ord("Z"))) {
-        var _segundo_actual = audio_sound_get_track_position(audio_stream);
-        _segundo_actual = floor(_segundo_actual * 100) / 100;
-        
-        show_debug_message("    [" + string(_segundo_actual) + ", " + string(carril_simulado) + ", 0],");
-        
-        var _color_chisqa = c_white;
-        var _target_x = 125;
-        switch(carril_simulado) {
-            case 0: _target_x = 125; _color_chisqa = make_color_rgb(255, 60, 60);  break;
-            case 1: _target_x = 147; _color_chisqa = make_color_rgb(60, 255, 100); break;
-            case 2: _target_x = 168; _color_chisqa = make_color_rgb(60, 180, 255); break;
-            case 3: _target_x = 190; _color_chisqa = make_color_rgb(255, 230, 40); break;
-        }
-        repeat(4) {
-            var _chispa = instance_create_layer(_target_x, 161, "Particles", oMusical_Spark);
-            _chispa.color_chispa = _color_chisqa;
-        }
-        
-        carril_simulado++;
-        if (carril_simulado > 3) carril_simulado = 0;
     }
 }

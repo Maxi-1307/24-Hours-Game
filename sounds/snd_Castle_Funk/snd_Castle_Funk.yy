@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":176.64,
+  "duration":203.639,
   "exportDir":"",
   "name":"snd_Castle_Funk",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_Castle_Funk.ogg",
+  "soundFile":"snd_Castle_Funk.mp3",
   "volume":1.0,
 }

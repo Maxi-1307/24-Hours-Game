@@ -22,7 +22,7 @@ if (estado_juego != "resultados" || (estado_juego == "resultados" && sub_fase_fi
     draw_text_transformed_colour(205, 9, "SCORE: " + string(floor(global.Musical_Score)), 0.63, 0.63, 0, c_navy, c_navy, c_navy, c_navy, 1);
     draw_text_transformed(206, 9, "SCORE: " + string(floor(global.Musical_Score)), 0.63, 0.63, 0);
     
-    // Controles
+    //Controles
     draw_text_transformed(234,133,"(" + key_to_string(global.CancelKey) + ") Exit",0.5,0.5,0);
     draw_sprite_ext(sprMusical_Shapes,0,242,159,0.7,0.7,0,c_white,1);
     draw_text_transformed(250,151,"(" + key_to_string(global.LeftKey) + ")",0.5,0.5,0);
@@ -33,6 +33,7 @@ if (estado_juego != "resultados" || (estado_juego == "resultados" && sub_fase_fi
     draw_sprite_ext(sprMusical_Shapes,3,242,207,0.7,0.7,0,c_white,1);
     draw_text_transformed(250,199,"(" + key_to_string(global.RightKey) + ")",0.5,0.5,0);
     
+    //ROCK
     if (estado_juego == "intro" && (fase_intro == "caen_letras" || fase_intro == "suben_letras")) {
         draw_set_color(c_white);
         for (var i = 0; i < num_letras; i++) {
@@ -41,6 +42,7 @@ if (estado_juego != "resultados" || (estado_juego == "resultados" && sub_fase_fi
         }
     }
 
+    // Countdown
     if (texto_conteo != "") {
         draw_set_color(c_white);
         draw_set_halign(fa_center);
@@ -53,6 +55,7 @@ if (estado_juego != "resultados" || (estado_juego == "resultados" && sub_fase_fi
     }
 }
 
+
 if (estado_juego == "resultados" && sub_fase_final == "finish_cascada") {
     draw_set_color(c_white);
     for (var i = 0; i < num_letras_finish; i++) {
@@ -60,6 +63,7 @@ if (estado_juego == "resultados" && sub_fase_final == "finish_cascada") {
         draw_text_transformed_colour(_base_finish_x, finish_y[i], letras_finish[i], 1.6, 1.6, 0, c_white, c_white, c_orange, c_orange, 1);
     }
 }
+
 
 if (estado_juego == "resultados" && (sub_fase_final == "mostrar_tabla" || sub_fase_final == "escalando_puntos" || sub_fase_final == "veredicto")) {
     
@@ -85,6 +89,7 @@ if (estado_juego == "resultados" && (sub_fase_final == "mostrar_tabla" || sub_fa
         draw_text_transformed_color(60,  _yy, string(i + 1) + ". " + _nombre, 0.8, 0.8, 0, _color_fila, _color_fila, _color_fila, _color_fila, 1);
         draw_text_transformed_color(200, _yy, string(_puntos) + " PTS", 0.8, 0.8, 0, _color_fila, _color_fila, _color_fila, _color_fila, 1);
     }
+    
     if (sub_fase_final == "veredicto" && texto_veredicto != "") {
         if (veredicto_visible) {
             draw_set_halign(fa_center);
@@ -92,8 +97,8 @@ if (estado_juego == "resultados" && (sub_fase_final == "mostrar_tabla" || sub_fa
             var _box_y = 185;
             
             draw_set_color(color_veredicto);
-            draw_rectangle(_box_x - 65, _box_y - 2, _box_x + 75, _box_y + 12, true);
-            draw_rectangle(_box_x - 66, _box_y - 3, _box_x + 76, _box_y + 13, true); 
+            draw_rectangle(_box_x - 78, _box_y - 2, _box_x + 75, _box_y + 29, true);
+            draw_rectangle(_box_x - 79, _box_y - 3, _box_x + 76, _box_y + 30, true); 
             
             draw_text_transformed_color(_box_x, _box_y, texto_veredicto, 0.9, 0.9, 0, color_veredicto, color_veredicto, color_veredicto, color_veredicto, 1);
         }

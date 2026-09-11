@@ -1,5 +1,5 @@
 if (transicion_fase == "abriendo") {
-    ancho_cortina = lerp(ancho_cortina, 0, 0.08);
+    ancho_cortina = lerp(ancho_cortina, 0, 0.06);
     if (ancho_cortina <= 0.5) {
         ancho_cortina = 0;
         transicion_fase = "jugando";
@@ -12,7 +12,7 @@ if (transicion_fase == "abriendo") {
 }
 
 if (transicion_fase == "cerrando") {
-    ancho_cortina = lerp(ancho_cortina, cam_width / 2, 0.1);
+    ancho_cortina = lerp(ancho_cortina, cam_width / 2, 0.08);
     if (abs(ancho_cortina - (cam_width / 2)) <= 0.5) {
         ancho_cortina = cam_width / 2;
         transicion_fase = "completamente_cerrado";
@@ -28,20 +28,18 @@ cam_zoom = lerp(cam_zoom, cam_zoom_target, cam_zoom_speed);
 if (flash_general_alfa > 0) {
     flash_general_alfa -= flash_general_decay;
 }
-
 if (is_holding_note) {
-    cam_x_target = random_range(-1.5, 1.5);
-    cam_y_target = random_range(-1.5, 1.5);
+    cam_x_target = lerp(cam_x_target, random_range(-2, 2), 0.05);
+    cam_y_target = lerp(cam_y_target, random_range(-8, -2), 0.05);
 } else {
-    cam_x_target = lerp(cam_x_target, 0, 0.15);
-    cam_y_target = lerp(cam_y_target, 0, 0.15);
-    cam_angle_target = lerp(cam_angle_target, 0, 0.15);
+    cam_x_target = lerp(cam_x_target, 0, 0.08);
+    cam_y_target = lerp(cam_y_target, 0, 0.08);
+    cam_angle_target = lerp(cam_angle_target, 0, 0.10);
 }
 
-cam_x_current = lerp(cam_x_current, cam_x_target, 0.2);
-cam_y_current = lerp(cam_y_current, cam_y_target, 0.2);
-cam_angle_current = lerp(cam_angle_current, cam_angle_target, 0.2);
-
+cam_x_current = lerp(cam_x_current, cam_x_target, 0.12);
+cam_y_current = lerp(cam_y_current, cam_y_target, 0.12);
+cam_angle_current = lerp(cam_angle_current, cam_angle_target, 0.12);
 
 var _cam = view_camera[0];
 

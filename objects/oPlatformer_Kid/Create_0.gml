@@ -1,4 +1,3 @@
-// Velocidades de movimiento
 vel_horizontal = 0;
 vel_vertical = 0;
 

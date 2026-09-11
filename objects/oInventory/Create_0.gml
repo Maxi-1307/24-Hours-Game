@@ -7,3 +7,6 @@ frame_cell = 0;
 
 contact_index = 0;
 phone_submenu = false;
+
+cell_cursor_col = 0;
+cell_cursor_row = 0;

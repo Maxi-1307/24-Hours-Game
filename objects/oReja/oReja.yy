@@ -6,8 +6,8 @@
   "name":"oReja",
   "overriddenProperties":[],
   "parent":{
-    "name":"24_hours",
-    "path":"24_hours.yyp",
+    "name":"objects",
+    "path":"folders/objects.yy",
   },
   "parentObjectId":{
     "name":"oDepth_Tile_Manager",

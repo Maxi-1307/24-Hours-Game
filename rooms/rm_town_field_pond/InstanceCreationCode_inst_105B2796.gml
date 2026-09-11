@@ -1,6 +1,3 @@
-// =========================================================================
-// VARIABLES LOCALES INICIALIZADAS PARA ESTA INSTANCIA EN LA ROOM
-// =========================================================================
 duck_cinematic_played = false;
 duck_cinematic_timer = 0;
 sequence_id = -1;  
@@ -9,8 +6,6 @@ used_call = false;
 used_stand = false;
 cinematica = false; 
 
-// =========================================================================
-// FUNCIÓN Update_Dialogos() - EJECUTADA EN EL STEP UNIVERSAL
 function Update_Dialogos(){
     var _es_mi_caja = (instance_exists(oTextBox) && variable_instance_exists(oTextBox, "creator") && oTextBox.creator == id);
 	text = [];

@@ -1,8 +1,9 @@
 function Update_Dialogos(){}
 function Dialogos(){}
+function Draw_Dialogos(){}
 base_box_draw_x = 100;
 base_box_draw_y = 75;
-
+creator = noone;
 text = [];
 speaker_sprite = [];
 txtb_snd = [];

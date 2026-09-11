@@ -146,32 +146,63 @@ if (menu_state == 3) {
 
 // CELL
 if (menu_state == 4) {
-    if (keyboard_check_pressed(global.DownKey) || keyboard_check_pressed(global.UpKey)) {
-        phone_submenu = !phone_submenu;
+    
+    if (keyboard_check_pressed(global.RightKey) && cell_cursor_col < 2) {
+        cell_cursor_col++;
         audio_play_sound(sfx_menu_move, 1, false);
     }
-
+    
+    if (keyboard_check_pressed(global.LeftKey) && cell_cursor_col > 0) {
+        cell_cursor_col--;
+        audio_play_sound(sfx_menu_move, 1, false);
+    }
+    
+    if (keyboard_check_pressed(global.DownKey) && cell_cursor_row < 1) {
+        cell_cursor_row++;
+        audio_play_sound(sfx_menu_move, 1, false);
+    }
+    
+    if (keyboard_check_pressed(global.UpKey) && cell_cursor_row > 0) {
+        cell_cursor_row--;
+        audio_play_sound(sfx_menu_move, 1, false);
+    }
+    
+    // Seleccionar
     if (!z_lock && keyboard_check_pressed(global.ConfirmKey)) {
         audio_play_sound(sfx_select, 1, false);
         z_lock = true;
-
-        if (!phone_submenu) {  // Call
-            menu_state = 5;
-            contact_index = 0;
-            phone_submenu = false;
-        } else {  // Close
-            menu_state = 0;
-            menu_index = 0;
-            items_index = 0;
-            phone_submenu = false;
+        
+        var cell_index = cell_cursor_row * 3 + cell_cursor_col;
+        
+        switch (cell_index) {
+            case 0:
+				menu_state = 5;
+                break;
+                
+            case 1:
+                break;
+                
+            case 2:
+                break;
+                
+            case 3:
+                break;
+                
+            case 4:
+                break;
+                
+            case 5:
+                break;
         }
     }
-
+    
+    // Volver
     if (keyboard_check_pressed(global.CancelKey)) {
         menu_state = 0;
         menu_index = 0;
         items_index = 0;
-        phone_submenu = false;
+        cell_cursor_col = 0;
+        cell_cursor_row = 0;
     }
 }
 

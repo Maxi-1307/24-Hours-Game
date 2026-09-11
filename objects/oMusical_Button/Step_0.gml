@@ -36,6 +36,17 @@ if (keyboard_check(tecla_global)) {
             
             if (_distancia_pixeles <= oMusical_Controller.margen_asistencia) {
                 global.Musical_Score += 10;
+                
+                with (oMusical_Controller) {
+                    combo_actual++;
+                    if (combo_actual > combo_maximo) {
+                        combo_maximo = combo_actual;
+                    }
+                    combo_splash_timer = 0;
+                    combo_splash_alpha = 1;
+                    combo_splash_scale = 0.5;
+                }
+                
                 var _color_chispa = c_white;
                 switch(carril) {
                     case 0: _color_chispa = make_color_rgb(255, 60, 60);   break;
@@ -48,8 +59,6 @@ if (keyboard_check(tecla_global)) {
                     var _nueva_chispa = instance_create_layer(x, y, "Particles", oMusical_Spark);
                     _nueva_chispa.color_chispa = _color_chispa;
                 }
-
-
                 
                 if (instance_exists(oMusical_Camera)) {
                     oMusical_Camera.cam_angle_target = (carril <= 1) ? -1 : 1;
@@ -73,18 +82,19 @@ if (keyboard_check(tecla_global)) {
     
     if (_sosteniendo_ahora) {
         global.Musical_Score += 0.15;
-                var _color_chispa = c_white;
-                switch(carril) {
-                    case 0: _color_chispa = make_color_rgb(255, 60, 60);   break;
-                    case 1: _color_chispa = make_color_rgb(60, 255, 100);  break;
-                    case 2: _color_chispa = make_color_rgb(60, 180, 255);  break;
-                    case 3: _color_chispa = make_color_rgb(255, 230, 40);  break;
-                }
+        
+        var _color_chispa = c_white;
+        switch(carril) {
+            case 0: _color_chispa = make_color_rgb(255, 60, 60);   break;
+            case 1: _color_chispa = make_color_rgb(60, 255, 100);  break;
+            case 2: _color_chispa = make_color_rgb(60, 180, 255);  break;
+            case 3: _color_chispa = make_color_rgb(255, 230, 40);  break;
+        }
 
-                repeat(3) { 
-                    var _nueva_chispa = instance_create_layer(x, y, "Particles", oMusical_Spark);
-                    _nueva_chispa.color_chispa = _color_chispa;
-                }
+        repeat(3) { 
+            var _nueva_chispa = instance_create_layer(x, y, "Particles", oMusical_Spark);
+            _nueva_chispa.color_chispa = _color_chispa;
+        }
 
         if (instance_exists(oMusical_Camera)) oMusical_Camera.is_holding_note = true;
     }
@@ -101,8 +111,6 @@ if (keyboard_check(tecla_global)) {
             }
         }
     }
-
-
 }
 
 escala_x = lerp(escala_x, escala_base, 0.2);

@@ -2,7 +2,7 @@ if (cooldown_interact > 0) {
     cooldown_interact--;
 }
 
-if(!instance_exists(oInventory) && place_meeting(x,y,oPlayer) && keyboard_check_pressed(global.ConfirmKey) && !instance_exists(oTextBox) && !using_piano && cooldown_interact <= 0)
+if(!instance_exists(oInventory) && oPlayer.state == PLAYER_STATE.NORMAL &&  place_meeting(x,y,oPlayer) && keyboard_check_pressed(global.ConfirmKey) && !instance_exists(oTextBox) && !using_piano && cooldown_interact <= 0)
 {
     var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 
@@ -16,45 +16,43 @@ if(!instance_exists(oInventory) && place_meeting(x,y,oPlayer) && keyboard_check_
         decisions[2] = { left : "Si", right: "No" };
         decision_result[2] = { right: 3 };
 
-        decision_script[2] = {
-            left: function(){
- instance_destroy(oTextBox);
-                
-                var ruta_al_piano = [];
-                
-                if (oPlayer.y < 210)
-                {
-                    array_push(ruta_al_piano, { x: 285, y: oPlayer.y, spd: 1.5, is_lerp: false });
-                    
-                    array_push(ruta_al_piano, { x: 285, y: 238, spd: 1.5, is_lerp: false });
-                    
-                    array_push(ruta_al_piano, { x: 245, y: 238, spd: 0.1, is_lerp: true });
-                }
-                else 
-                {
-                    array_push(ruta_al_piano, { x: 245, y: 238, spd: 1, is_lerp: false });
-                }
+decision_script[2] = {
+    left: function(){
+        instance_destroy(oTextBox);
 
-                PlayerWalk(ruta_al_piano, function() {
-					audio_pause_all();
+        var _piano = oPiano;
+
+        with (oPlayer) {
+            PlayerWalkTo(
+                _piano.end_target_x, _piano.end_target_y,
+                function() {
+                    audio_pause_all();
                     oPlayer.state = PLAYER_STATE.INTERACTING;
                     oPlayer.sprite_index = sprPlayerPianoPlaying;
                     oPlayer.image_index = 0; 
                     oPlayer.image_speed = 0;
-                    
+					//oPlayer.x = 245;
+					//oPlayer.y = 238;
+
                     oPiano.using_piano = true;
                     global.CanInventory = false;
                     global.CanMove = false;
-                });
-		}
-			}
+                },
+                1.5,
+                _piano.playing_x, _piano.playing_y
+            );
+        }
+    }
+}
+
         for(var i = 0; i < array_length(text); i++) {
             txtb_color[i] = c_white;
             txtb_snd[i] = sfx_text;
             speaker_sprite[i] = noone;
         }
-	}
+    }
 }
+
 if(using_piano)
 {
     var up    = keyboard_check(vk_up);
@@ -87,13 +85,13 @@ if(using_piano)
             global.CanInventory = true;
             
             oPlayer.state = PLAYER_STATE.NORMAL; 
-			audio_resume_all();
+            audio_resume_all();
             
             oPlayer.sprite_index = sprPlayerUp; 
             oPlayer.image_index = 0;
             oPlayer.image_speed = 0;
 
-            oPlayer.y += 20; 
+            oPlayer.y += 25; 
             
             cooldown_interact = 30; 
         }
@@ -103,20 +101,19 @@ if(using_piano)
         hold_exit = 0;
     }
 
-
     if(keyboard_check_pressed(global.ConfirmKey)){
         var note_index;
-		
+
         oPlayer.image_speed = 0; 
-		
+
         if(current_octave == 4){
             oPlayer.image_index = 1;
-        }else{
+        } else {
             oPlayer.image_index = 2;
         }
-        
+
         piano_anim_timer = 6;
-		
+
         switch(current_note){
             case 0: note_index = 0;  break;
             case 1: note_index = 2;  break;
@@ -133,10 +130,10 @@ if(using_piano)
 
         if(current_sound != -1) audio_stop_sound(current_sound);
         current_sound = audio_play_sound(piano_notes[note_index], 0, false);
-		
+
         var played_name = note_names[note_index];
         array_push(played_notes, played_name);
-		
+
         var txt = "";
         for(var i = 0; i < array_length(played_notes); i++) {
             txt += played_notes[i];
@@ -169,7 +166,6 @@ if(using_piano)
         piano_flash_timer--;
         if(piano_flash_timer <= 0) piano_flash = -1;
     }
-	
 
     if(piano_anim_timer > 0)
     {
@@ -181,10 +177,6 @@ if(using_piano)
             oPlayer.image_index = 0;
         }
     }
-	
-
-
-	
 }
 
 var _cam = view_camera[0]; 
@@ -207,4 +199,3 @@ else
 {
     piano_cam_offset = 0;
 }
-

@@ -20,8 +20,6 @@ for (var i = 0; i < num_letras; i++) {
 }
 
 timer_intro = 0;
-
-
 texto_conteo = "";
 
 lineas_offset_y = 0;
@@ -30,17 +28,24 @@ lineas_velocidad = 0.7;
 if (global.Musical_Dificultad == "normal") {
     margen_asistencia = 24;
 } else {
-    margen_asistencia = 10; 
+    margen_asistencia = 12; 
 }
 
 audio_stream = noone;  
 nota_actual_index = 0; 
 
-
 mapa_notas = cargar_partitura_musical(global.Musica_Seleccionada, global.Musical_Dificultad);
 num_total_notas = array_length(mapa_notas);
 
 siguiente_hito_publico = 200;
+
+
+combo_actual = 0;
+combo_maximo = 0;
+combo_splash_timer = 0;
+combo_splash_alpha = 0;
+combo_splash_scale = 1;
+combo_splash_color = c_white;
 
 sub_fase_final = "esperando_fin"; 
 timer_final = 0;
@@ -72,6 +77,5 @@ if (!variable_global_exists("Musical_HighScore_Guardado")) {
     global.Musical_HighScore_Guardado = 200; 
 }
 
-
-modo_grabacion = true;
+modo_grabacion = false;
 carril_simulado = 0;

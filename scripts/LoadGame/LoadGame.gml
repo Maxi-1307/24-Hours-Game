@@ -4,7 +4,7 @@ function LoadGame(){
         return;
     }
     
-    Items();
+    Items();	
 	
     
     var _file = file_text_open_read("save_data.json");
@@ -27,6 +27,17 @@ function LoadGame(){
 		global.TURNS = _data.storeturns;
 		global.DuckStory = _data.duck_story;
 		global.TOMBSTONE = _data.tombstone;
+		//XD solo lo puse para probar el try y catch si da error el save file
+		//global.cheese = _data.cheese;
+		
+		
+		
+    if(!instance_exists(oWeather)) instance_create_layer(0,0,"Atmosphere",oWeather);		
+	if(!instance_exists(oTimeAtmosphere)) instance_create_layer(0,0,"Atmosphere",oTimeAtmosphere);
+    if(!instance_exists(oTime)) instance_create_layer(0,0,"Time",oTime);
+    if(!instance_exists(oShadow_Light)) instance_create_depth(320,0,-9999,oShadow_Light);
+	if (!instance_exists(oMusicer)) instance_create_layer(0, 0,"Atmosphere", oMusicer);	
+	if(!instance_exists(oPlayer)) instance_create_layer(global.PlayerX, global.PlayerY, "Player", oPlayer);
         
         if (variable_struct_exists(_data, "musical_highscore_saved")) {
             global.Musical_HighScore_SAVED = _data.musical_highscore_saved;
@@ -68,16 +79,11 @@ function LoadGame(){
 		}
 
         room_goto(_data.current_room);
-        
-        if(!instance_exists(oTimeAtmosphere)) instance_create_layer(0,0,"Atmosphere",oTimeAtmosphere);
-        if(!instance_exists(oTime)) instance_create_layer(0,0,"Time",oTime);
-        if(!instance_exists(oPlayer)) instance_create_layer(global.PlayerX, global.PlayerY, "Player", oPlayer);
-        if(!instance_exists(oShadow_Light)) instance_create_depth(320,0,-9999,oShadow_Light);
-        if(!instance_exists(oWeather)) instance_create_layer(0,0,"Atmosphere",oWeather);
 		
 		
         show_debug_message("Cargo el save data");
     } catch (_error) {
+		room_goto(rm_Save_Check);
         show_debug_message("Error al leer el archivo save_data.json: " + string(_error));
     }
 }

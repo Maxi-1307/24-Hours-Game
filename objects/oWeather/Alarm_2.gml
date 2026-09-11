@@ -1,4 +1,4 @@
-if (layer_exists("Puddles")) {
+if (layer_exists("Objects")) {
 
     if (!global.Is_Indoors && instance_number(oPuddle) < 15) {
         var _cam_x = camera_get_view_x(view_camera[0]);
@@ -13,7 +13,7 @@ if (layer_exists("Puddles")) {
             var _px = _cam_x + random(_cam_w);
             var _py = _cam_y + random(_cam_h);
 
-            var _inst = instance_create_layer(_px, _py, "Puddles", oPuddle);
+            var _inst = instance_create_layer(_px, _py, "Objects", oPuddle);
             
             with (_inst) {
                 if (place_meeting(x, y, oWall) || place_meeting(x, y, oPuddle)) {

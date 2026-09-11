@@ -4,6 +4,28 @@ var _inicio_morro = 22;
 
 var _x1, _y1, _x2, _y2;
 
+if (direction == 0) {
+    sprite_index = sprCarSide;
+    image_angle = 0;
+}
+
+if (direction == 90) {
+    sprite_index = sprCar_Front_Back;
+    image_index = 1;
+    image_angle = 0;
+}
+
+if (direction == 180) {
+    sprite_index = sprCarSide;
+    image_angle = 180;
+}
+
+if (direction == 270) {
+    sprite_index = sprCar_Front_Back;
+    image_index = 0;
+    image_angle = 0;
+}
+
 if (direction == 0 || direction == 180) {
 _x1 = x + lengthdir_x(_inicio_morro, direction);
 _x2 = x + lengthdir_x(_inicio_morro + _largo_vista, direction);

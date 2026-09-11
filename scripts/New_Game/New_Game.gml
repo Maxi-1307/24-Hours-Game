@@ -95,4 +95,5 @@ function New_Game(){
 	if(!instance_exists(oWeather)){
 		instance_create_depth(0,0,-9999,oWeather);
 	}
+	if (!instance_exists(oMusicer)) instance_create_layer(0, 0,"Atmosphere", oMusicer);
 }

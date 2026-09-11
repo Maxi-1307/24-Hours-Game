@@ -2,7 +2,7 @@ base_cam_w = 200;
 base_cam_h = 100;
 base_box_draw_x = 100;
 base_box_draw_y = 75;
-
+creator = noone;
 setup = false;
 
 textbox_width  = 175;
@@ -86,5 +86,4 @@ camino_fin = -1;
 
 text_font = MainFont;
 
-// Al final del Create Event
-is_item_dialog = false;  // Flag para saber si es un diálogo de item
+is_item_dialog = false;

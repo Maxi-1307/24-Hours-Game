@@ -405,5 +405,33 @@
   "shop_item_egg": "Egg",
   "shop_item_chips": "Chips",
   "shop_item_soda": "Soda Can",
-  "shop_item_water": "Water Bottle"
+  "shop_item_water": "Water Bottle",
+
+
+  "_oSomeone": "=== Someone Dialogue ===",
+  "someone_speak_1": "<unskippable>* Oh, I apologize for the#intrusion,but I couldn't help#but notice...",
+  "someone_speak_2": "<unskippable>* How your face twisted,#as if you were struggling...",
+  "someone_speak_3": "<unskippable>* Struggling with something#hard to put into words.",
+  "someone_speak_4": "<unskippable>* Right after you approached#that gravestone.",
+  "someone_speak_5": "<unskippable>* I know what it's like#to carry things you can't#explain...",
+
+  "someone_speak_6": "<unskippable>* Oh,<wait=30>I didn't mean#to make you feel that way...",
+  "someone_speak_7": "<unskippable>* If it makes you feel any#better...",
+  "someone_speak_8": "<unskippable>* Come closer, let me#tell you something.",
+
+  "someone_speak_9": "<unskippable>* You slowly step closer#to him.",
+  "someone_speak_10": "<unskippable>* He leans in to your ear#and...",
+  "someone_speak_11": "<unskippable>* He begins to whisper#something to you...",
+  "someone_speak_12": "<unskippable>* Something that sounds like#a story...",
+  "someone_speak_13": "<unskippable>* Or maybe a piece of#advice...",
+  "someone_speak_14": "<unskippable>* What matters is that you#listened to every word#carefully.",
+
+  "someone_speak_15": "<unskippable>* You step back a little.",
+  "someone_speak_16": "<unskippable>* You see the man wave#goodbye to you with his hand.",
+  "someone_speak_17": "<unskippable>* Before turning around...",
+  "someone_speak_18": "<unskippable>* And walking slowly#among the trees.",
+
+  "someone_speak_19": "* Well, there was SOMEONE#here.",
+  "someone_speak_20": "* Well, there was someone#here.",
+  "someone_speak_21": "* It's not good to dwell on#things that have already#passed."
 }

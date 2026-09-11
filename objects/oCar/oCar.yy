@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"sprCarTest",
-    "path":"sprites/sprCarTest/sprCarTest.yy",
+    "name":"sprCarSide",
+    "path":"sprites/sprCarSide/sprCarSide.yy",
   },
   "spriteMaskId":null,
   "visible":true,

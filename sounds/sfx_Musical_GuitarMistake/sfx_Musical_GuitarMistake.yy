@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"sfx_Musical_GuitarMistake",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroupVolumeSFX",
+    "path":"audiogroups/audiogroupVolumeSFX",
   },
   "bitDepth":1,
   "channelFormat":0,

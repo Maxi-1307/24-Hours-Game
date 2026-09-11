@@ -13,11 +13,11 @@ if(interact == 0){
 	if(place_meeting(x,y,oPlayer) && keyboard_check_pressed(global.ConfirmKey) && !instance_exists(oTextBox) && oPlayer.sprite_index == sprPlayerDown && state == 0){
 		var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 		with(textbox){
-			text[0] = "<unskippable>* Oh, lamento mi intrusión,#pero no pude no notar...";
-			text[1] = "<unskippable>* Como tu cara se retorcio,#como si lucharas...";
-			text[2] = "<unskippable>* Lucharas con algo dificil#de explicar.";
-			text[3] = "<unskippable>* Justo después de acercarte#a esa lapida.";
-			text[4] = "<unskippable>* Yo se lo que es las cosas#que no puedes explicar...";
+			text[0] = _T("someone_speak_1");
+			text[1] = _T("someone_speak_2");
+			text[2] = _T("someone_speak_3");
+			text[3] = _T("someone_speak_4");
+			text[4] = _T("someone_speak_5");
 		
 			other.state = 1;
 		
@@ -40,9 +40,9 @@ if(interact == 0){
 	if(state == 2 && !instance_exists(oTextBox)){
 		var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 		with(textbox){
-			text[0] = "<unskippable>* Oh,<wait=30>no era para#que te pongas asi...";
-			text[1] = "<unskippable>* Si te hace sentir mejor...";
-			text[2] = "<unskippable>* Acercate, deja que#te cuente algo.";
+			text[0] = _T("someone_speak_6");
+			text[1] = _T("someone_speak_7");
+			text[2] = _T("someone_speak_8");
 			for(var i = 0;i < array_length(text);i++){
 				speaker_sprite[i] = noone;
 				txtb_color[i] = c_white;
@@ -66,12 +66,12 @@ if(interact == 0){
 	if(state == 4 && !instance_exists(oTextBox)){
 		var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 		with(textbox){
-			text[0] = "<unskippable>* Te acercas lentamente#hasta a él.";
-			text[1] = "<unskippable>* Él se acerca a tu oreja y...";
-			text[2] = "<unskippable>* Comienza a susurrarte algo..."
-			text[3] = "<unskippable>* Algo parecido a una historia...";
-			text[4] = "<unskippable>* O quizas un consejo...";
-			text[5] = "<unskippable>* Lo que importa es que oiste#cada palabra con atención.";
+			text[0] = _T("someone_speak_9");
+			text[1] = _T("someone_speak_10");
+			text[2] = _T("someone_speak_11");
+			text[3] = _T("someone_speak_12");
+			text[4] = _T("someone_speak_13");
+			text[5] = _T("someone_speak_14");
 		
 			for(var i = 0;i < array_length(text);i++){
 				speaker_sprite[i] = noone;
@@ -97,10 +97,10 @@ if(interact == 0){
 	if(state == 7 && !instance_exists(oTextBox)){
 		var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 		with(textbox){
-			text[0] = "<unskippable>* Retrocedes un poco.";
-			text[1] = "<unskippable>* Ves como el hombre se#despide de ti moviendo#su mano.";
-			text[2] = "<unskippable>* Antes de darse la vuelta...";
-			text[3] = "<unskippable>* Y caminar lentamente#entre los árboles."
+			text[0] = _T("someone_speak_15");
+			text[1] = _T("someone_speak_16");
+			text[2] = _T("someone_speak_17");
+			text[3] = _T("someone_speak_18");
 			for(var i = 0;i < array_length(text);i++){
 				speaker_sprite[i] = noone;
 				txtb_color[i] = c_white;
@@ -123,16 +123,16 @@ if(interact > 0){
 		var textbox = instance_create_layer(0,0,"Dialogue",oTextBox);
 		with(textbox){
 			switch(other.interact){
-				case 1: text[0] = "* Bueno aqui habia ALGUIEN.";
+				case 1: text[0] = _T("someone_speak_19");
 				break;
-				case 2: text[0] = "* Bueno aqui habia alguien.";
+				case 2: text[0] = _T("someone_speak_20");
 				break;
 				default: text[0] = "* ...";
 				break;
 				
 			}
 			if(other.interact == other.random_odd){
-				text[0] = "* No es bueno insistir en#aquellas cosas que#simplemente ya pasaron";
+				text[0] = _T("someone_speak_21");
 				instance_destroy(oSomeone);
 			}
 		}

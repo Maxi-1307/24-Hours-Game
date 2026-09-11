@@ -1,67 +1,77 @@
 switch(state){
 
-    case PLAYER_STATE.AUTO_MOVE:
-        if (array_length(waypoint_list) > 0){
-            var _wp = waypoint_list[waypoint_index];
-            var _wp_x = _wp.x;
-            var _wp_y = _wp.y;
+case PLAYER_STATE.AUTO_MOVE:
+    if (array_length(waypoint_list) > 0){
+        var _wp = waypoint_list[waypoint_index];
+        var _wp_x = _wp.x;
+        var _wp_y = _wp.y;
+        
+        var _spd  = variable_struct_exists(_wp, "spd") ? _wp.spd : walk_spd;
+        var _use_lerp = variable_struct_exists(_wp, "is_lerp") ? _wp.is_lerp : false;
+
+        var h = 0;
+        var v = 0;
+
+        if (_use_lerp){
+            x = lerp(x, _wp_x, _spd);
+            y = lerp(y, _wp_y, _spd);
             
-            var _spd  = variable_struct_exists(_wp, "spd") ? _wp.spd : walk_spd;
-            var _use_lerp = variable_struct_exists(_wp, "is_lerp") ? _wp.is_lerp : false;
+            if (abs(_wp_x - x) > 0.5) h = sign(_wp_x - x);
+            if (abs(_wp_y - y) > 0.5) v = sign(_wp_y - y);
+        } else {
+            var _dx = _wp_x - x;
+            var _dy = _wp_y - y;
 
-            var h = 0;
-            var v = 0;
+            h = sign(_dx);
+            v = sign(_dy);
 
-            if (_use_lerp){
-                x = lerp(x, _wp_x, _spd);
-                y = lerp(y, _wp_y, _spd);
-                
-                if (abs(_wp_x - x) > 1) h = sign(_wp_x - x);
-                if (abs(_wp_y - y) > 1) v = sign(_wp_y - y);
-            }else {
-                if (abs(_wp_x - x) > _spd) h = sign(_wp_x - x);
-                if (abs(_wp_y - y) > _spd) v = sign(_wp_y - y);
+            x += h * min(_spd, abs(_dx));
+            y += v * min(_spd, abs(_dy));
+        }
 
-                x += h * _spd;
-                y += v * _spd;
-            }
+        if (abs(h) > abs(v)){
+            sprite_index = (h > 0) ? Sprites_Walking[3] : Sprites_Walking[2];
+        } else if (abs(v) > 0) {
+            sprite_index = (v > 0) ? Sprites_Walking[0] : Sprites_Walking[1];
+        }
+        
+        if (h != 0 || v != 0){
+            image_speed = 1;
+        } else {
+            image_speed = 0;
+            image_index = 0;
+        }
 
-            if (abs(h) > abs(v)){
-                sprite_index = (h > 0) ? sprPlayerRight : sprPlayerLeft;
-            }else if (abs(v) > 0) {
-                sprite_index = (v > 0) ? sprPlayerDown : sprPlayerUp;
-            }
+        if (abs(_wp_x - x) <= 0.5 && abs(_wp_y - y) <= 0.5){
+            x = _wp_x;
+            y = _wp_y;
             
-            if (h != 0 || v != 0){
-                image_speed = 1;
-            }else{
-                image_speed = 0;
-                image_index = 0;
-            }
+            waypoint_index++;
 
-            if (abs(_wp_x - x) <= 1 && abs(_wp_y - y) <= 1){
-                x = _wp_x;
-                y = _wp_y;
-                
-                waypoint_index++;
+            if (waypoint_index >= array_length(waypoint_list))
+            {
+                waypoint_list = [];
+                waypoint_index = 0;
 
-                if (waypoint_index >= array_length(waypoint_list))
+                state = PLAYER_STATE.NORMAL;
+                global.CanMove = true;
+
+                //show_debug_message("AUTO_MOVE terminado. move_callback = " + string(move_callback));
+
+                if(is_callable(move_callback))
                 {
-                    waypoint_list = [];
-                    waypoint_index = 0;
-
-                    state = PLAYER_STATE.NORMAL;
-                    global.CanMove = true;
-
-                    if(is_callable(move_callback))
-                    {
-                        move_callback();
-                        move_callback = undefined;
-                    }
+                    //show_debug_message("Ejecutando callback...");
+                    move_callback();
+                    move_callback = undefined;
+                }
+                else
+                {
+                    //show_debug_message("move_callback NO es callable.");
                 }
             }
         }
-        break;
+    }
+    break;
 
     case PLAYER_STATE.NORMAL:
         var h = keyboard_check(global.RightKey) - keyboard_check(global.LeftKey);
@@ -102,7 +112,7 @@ switch(state){
 
             if (!_collision_detected_h){
                 x += xspd;
-            }else{
+            } else {
                 if (v == 0) {
                     var _slide_dist = 6; 
                     
@@ -140,7 +150,7 @@ switch(state){
 
                     if (!_pixel_solid){
                         x += sign(xspd);
-                    }else{
+                    } else {
                         break;
                     }
                     xspd -= sign(xspd) * 0.1;
@@ -162,7 +172,7 @@ switch(state){
 
             if (!_collision_detected_v){
                 y += yspd;
-            }else{
+            } else {
                 if (h == 0) {
                     var _slide_dist = 6; 
                     
@@ -200,7 +210,7 @@ switch(state){
 
                     if (!_pixel_solid){
                         y += sign(yspd);
-                    }else{ 
+                    } else { 
                         break;
                     }
                     yspd -= sign(yspd) * 0.1;
@@ -211,19 +221,25 @@ switch(state){
             ds_list_destroy(_collision_list);
 
             if (abs(xspd) > abs(yspd)){
-                sprite_index = (xspd > 0) ? sprPlayerRight : sprPlayerLeft;
-            }else if (abs(yspd) > 0) {
-                sprite_index = (yspd > 0) ? sprPlayerDown : sprPlayerUp;
+                facing_dir = (xspd > 0) ? 3 : 2;
+            } else if (abs(yspd) > 0) {
+                facing_dir = (yspd > 0) ? 0 : 1;
             }
+
+            sprite_index = Sprites_Walking[facing_dir];
+
+            var _in_sunset = place_meeting(x, y, oSunsetTrigger);
 
             if ((h != 0 || v != 0) && (xspd != 0 || yspd != 0)){
                 image_speed = 1;
-            }else{
+            } else if (_in_sunset) {
+                image_speed = 1;
+            } else {
                 image_speed = 0;
                 image_index = 0;
             }
 
-        }else{
+        } else {
             xspd = 0;
             yspd = 0;
             image_speed = 0;
@@ -236,5 +252,3 @@ switch(state){
         yspd = 0;
         break;
 }
-
-

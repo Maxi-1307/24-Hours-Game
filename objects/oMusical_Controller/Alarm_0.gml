@@ -12,6 +12,9 @@ if(global.Musica_Seleccionada == snd_Test_TVWORLD){
 	}	
 }
 
+with(oMusicer){
+	PlayCurrentSong();
+}
 
 room_goto(rm_town_arcade); 
 global.CanMove = true;

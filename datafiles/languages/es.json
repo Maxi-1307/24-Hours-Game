@@ -406,5 +406,32 @@
   "shop_item_egg": "Huevo",
   "shop_item_chips": "Papas",
   "shop_item_soda": "Refresco",
-  "shop_item_water": "Botella de Agua"
+  "shop_item_water": "Botella de Agua",
+
+  "_oSomeone": "=== Someone Dialogue ===",
+  "someone_speak_1":"<unskippable>* Oh, lamento mi intrusión,#pero no pude no notar...",
+	"someone_speak_2":"<unskippable>* Como tu cara se retorcio,#como si lucharas...",
+	"someone_speak_3":"<unskippable>* Lucharas con algo dificil#de explicar.",
+	"someone_speak_4":"<unskippable>* Justo después de acercarte#a esa lapida.",
+	"someone_speak_5":"<unskippable>* Yo se lo que es las cosas#que no puedes explicar...",
+
+  "someone_speak_6":"<unskippable>* Oh,<wait=30>no era para#que te pongas asi...",
+	"someone_speak_7":"<unskippable>* Si te hace sentir mejor...",
+	"someone_speak_8":"<unskippable>* Acercate, deja que#te cuente algo.",
+
+  "someone_speak_9":"<unskippable>* Te acercas lentamente#hasta a él.",
+	"someone_speak_10":"<unskippable>* Él se acerca a tu oreja y...",
+	"someone_speak_11": "<unskippable>* Comienza a susurrarte algo...",
+	"someone_speak_12": "<unskippable>* Algo parecido a una historia...",
+	"someone_speak_13": "<unskippable>* O quizas un consejo...",
+	"someone_speak_14":"<unskippable>* Lo que importa es que oiste#cada palabra con atención.",
+
+  "someone_speak_15": "<unskippable>* Retrocedes un poco.",
+	"someone_speak_16": "<unskippable>* Ves como el hombre se#despide de ti moviendo#su mano.",
+	"someone_speak_17": "<unskippable>* Antes de darse la vuelta...",
+	"someone_speak_18": "<unskippable>* Y caminar lentamente#entre los árboles.",
+
+ "someone_speak_19":"* Bueno aqui habia ALGUIEN.",
+  "someone_speak_20": "* Bueno aqui habia alguien.",
+  "someone_speak_21":"* No es bueno insistir en#aquellas cosas que#simplemente ya pasaron"
 }

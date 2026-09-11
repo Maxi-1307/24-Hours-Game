@@ -36,11 +36,30 @@ function PhoneContacts() {
                 with (inst) {
 					
 					if(room == rm_town_store) {
-		                text[0] = "* (Click)..."
-		                text[1] = "* Hell-";
-		                text[2] = "* You know we can see#you calling us...";
-						text[3] = "* Try your prank in#another place!";
-		                text[4] = "* (Click)..."
+						if(instance_exists(oStore_EmployeeGirl) && !instance_exists(oShop_EmployeeBoy)){
+							text[0] = "* (Click)..."
+			                text[1] = "* Hellow!!";
+			                text[2] = "* Oh, you got the store's#number!";
+							text[3] = "* That's akward...";
+							text[4] = "* But nice too,jajaja";
+							text[5] = "* Don't forget to do some#shop<wait=30>-ing";
+			                text[6] = "* (Click)...";
+						}else if(instance_exists(oShop_EmployeeBoy) && !instance_exists(oStore_EmployeeGirl)){
+							text[0] = "* (Click)..."
+			                text[1] = "* Hell-";
+			                text[2] = "<unskippable>*<wait=60> .<wait=60>.<wait=60>.";
+							text[3] = "* You know I'm looking#at you, right...?";
+			                text[4] = "* (Click)...";							
+						}else{
+							text[0] = "* (Click)";
+							text[1] = "* 24/7 Store it's a:";
+							text[2] = "* Normal and boring day...";
+							text[3] = "* Noo... that's not#the line!";
+							text[4] = "* For what? Like if you#can't see him standing#there!";
+							text[5] = "* Yeah I know but it's fun.";
+							text[6] = "* ...";
+							text[7] = "* (Click)...";
+						}
 		            }				
 					switch (global.current_turn)
 					{

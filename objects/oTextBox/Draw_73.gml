@@ -62,18 +62,13 @@ if (speaker_sprite[page] != noone && !choosing) {
     var base_scale = target_size / max(sw, sh);
     var final_scale = base_scale * cam_scale_x;
     
-    // ANIMA SOLO CUANDO ESTÁ TYPEANDOSE:
-    // Comparamos los caracteres dibujados actuales con el largo total del texto
     if (draw_char < text_length[page]) {
-        // Avanza el frame sumando la velocidad real configurada en el sprite por cada paso (delta_time independiente)
         var spr_spd = sprite_get_speed(spr) / game_get_speed(gamespeed_fps);
         speaker_img += spr_spd; 
     } else {
-        // Cuando termina de escribir, vuelve al primer frame (boca cerrada)
         speaker_img = 0; 
     }
     
-    // Dibujamos usando nuestra variable "speaker_img"
     draw_sprite_ext(spr, speaker_img, box_draw_x + portrait_x_offset[page] * cam_scale_x, box_draw_y, final_scale, final_scale, 0, c_white, 1);
 }
 
@@ -128,21 +123,21 @@ if (choosing) {
                 var _cursor_x = floor(_x - (_tw * 0.5) - 12);
                 var _cursor_y = floor(_y);
                 
-                draw_sprite_ext(sprCursor, 0, _cursor_x, _cursor_y, 0.9, 0.9, 0, c_white, 1);
+                draw_sprite_ext(sprCursor, 0, _cursor_x + 3, _cursor_y, 0.9, 0.9, 0, c_white, 1);
             }
         }
 
 		if (variable_struct_exists(d, "up"))    
-		    draw_opt_with_cursor(d.up,    _base_x, _base_y - 20, "up"); 
+		    draw_opt_with_cursor(d.up, _base_x, _base_y - 20, "up"); 
 
 		if (variable_struct_exists(d, "down"))  
 		    draw_opt_with_cursor(d.down,  _base_x, _base_y + 20, "down"); 
 
 		if (variable_struct_exists(d, "left"))  
-		    draw_opt_with_cursor(d.left,  _base_x - 55, _base_y, "left");  
+		    draw_opt_with_cursor(d.left,  _base_x - 95, _base_y, "left");  
 
 		if (variable_struct_exists(d, "right")) 
-		    draw_opt_with_cursor(d.right, _base_x + 55, _base_y, "right"); 
+		    draw_opt_with_cursor(d.right, _base_x + 95, _base_y, "right"); 
 
         draw_set_halign(fa_left);
         draw_set_valign(fa_top);
